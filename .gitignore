@@ -18,3 +18,5 @@ archive/
 *.zip
 *.tmp
 
+.env
+.env.local
