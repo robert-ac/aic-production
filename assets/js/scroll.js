@@ -33,10 +33,13 @@
   let duration = 0;
   let lastSeek = -1;
   let winH = window.innerHeight;
+  let frameId = 0;
+  function wake() { if (!frameId && !document.hidden) frameId = requestAnimationFrame(frame); }
 
   function computeTarget() {
     const max = document.documentElement.scrollHeight - winH;
     target = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    wake();
   }
 
   /* ------------------------------ VIDEO -------------------------------- */
@@ -52,6 +55,7 @@
         videoReady = true;
         video.classList.add("is-live");
         stopCanvas();   // the building now fills the screen, so the fallback is never seen
+        wake();
       }
     });
     // If the file is missing/unsupported, we simply keep the canvas fallback.
@@ -71,15 +75,17 @@
 
   /* ----------------------------- RAF LOOP ------------------------------ */
   function frame() {
+    frameId = 0;
+    if (document.hidden) return;
     // ease toward the scroll target for buttery, continuous motion
     smooth += (target - smooth) * (reduceMotion ? 1 : EASE);
     if (Math.abs(target - smooth) < 0.0002) smooth = target;
 
     // 1 — scrub the video (the building plays day→night as you scroll).
     //     No scale/transform: the shot is shown whole, so we never crop it.
-    if (videoReady && duration) {
-      const t = smooth * duration;
-      if (Math.abs(t - lastSeek) > SEEK_MIN) {
+    if (videoReady && duration && !reduceMotion) {
+      const t = Math.min(smooth * duration, Math.max(0, duration - 0.04));
+      if (!video.seeking && Math.abs(t - lastSeek) > SEEK_MIN) {
         try { video.currentTime = t; lastSeek = t; } catch (e) {}
       }
     }
@@ -88,12 +94,12 @@
     fill.style.width = (smooth * 100).toFixed(2) + "%";
 
     // 3 — orbit glow: gentle constant drift in the navy margins behind the building
-    if (orbits) {
+    if (orbits && !reduceMotion) {
       orbits.style.transform = "translateX(-50%) translateY(" + (smooth * -70).toFixed(1) + "px)";
     }
 
     // 4 — generic parallax layers
-    for (const el of parallaxEls) {
+    for (const el of (reduceMotion ? [] : parallaxEls)) {
       if (el === orbits) continue;
       const rate = parseFloat(el.dataset.parallax) || 0;
       const rect = el.getBoundingClientRect();
@@ -102,7 +108,7 @@
     }
 
     if (canvasActive) drawCanvas();
-    requestAnimationFrame(frame);
+    if (canvasActive || Math.abs(target - smooth) > 0.0002) wake();
   }
 
   /* ----------------------- REVEALS + NAV STATE ------------------------- */
@@ -222,7 +228,8 @@
 
   // pause canvas work when the tab is hidden
   document.addEventListener("visibilitychange", () => {
-    canvasActive = !document.hidden && !reduceMotion;   // pause ambient when tab hidden
+    canvasActive = !document.hidden && !reduceMotion && !videoReady;
+    if (document.hidden) { cancelAnimationFrame(frameId); frameId = 0; } else wake();
   });
 
   window.addEventListener("scroll", computeTarget, { passive: true });
@@ -234,5 +241,6 @@
   smooth = target;
   initVideo();
   initObservers();
-  requestAnimationFrame(frame);
+  video.addEventListener("seeked", wake);
+  wake();
 })();

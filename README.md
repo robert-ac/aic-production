@@ -68,7 +68,7 @@ docs/                            Content-strategy reference (not part of the liv
 - **Background video** is scrubbed by page scroll via `assets/scroll.js`.
 - **ALEBEX orb** is a Three.js liquid sphere (`assets/alebex-orb.js`) with a CSS fallback,
   linking demos to <https://alebex.ai/>.
-- External links: event registration on [Luma](https://luma.com/eu31fbfu),
+- External links: event registration on [Luma](https://luma.com/b90nqjol),
   updates on [LinkedIn](https://www.linkedin.com/company/alexinnovationc/posts/).
 
 Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <https://alexic.ca>

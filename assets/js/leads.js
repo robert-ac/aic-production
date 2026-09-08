@@ -34,7 +34,9 @@
       if (!t) return;
       var map = { "ai-readiness": "readiness", "training": "training", "workflow": "readiness",
         "governance": "readiness", "alebex-demo": "Alebex", "research": "research",
-        "venture-studio": "Incubation", "innovation-night": "Innovation", "infrastructure": "infrastructure" };
+        "venture-studio": "Incubation", "innovation-night": "Innovation", "infrastructure": "infrastructure",
+        "founders-lab": "Founders Lab", "accelerator": "Accelerator", "investor": "Investor",
+        "mentor": "Mentor" };
       var kw = (map[t] || t).toLowerCase();
       var sel = form.querySelector("select[name=inquiry]");
       if (!sel) return;

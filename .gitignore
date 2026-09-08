@@ -20,3 +20,5 @@ archive/
 
 .env
 .env.local
+# local QA screenshots (not shipped)
+docs/screens/

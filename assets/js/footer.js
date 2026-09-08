@@ -17,12 +17,12 @@
           <a class="finalcta__val" href="mailto:hello@alexic.ca">hello@alexic.ca</a>
         </div>
         <div class="finalcta__card">
-          <span class="finalcta__label">Hiring</span>
-          <a class="finalcta__val" href="https://ca.indeed.com/cmp/Alexander-College/jobs" target="_blank" rel="noopener">Join the team</a>
+          <span class="finalcta__label">Founders</span>
+          <a class="finalcta__val" href="founders-lab.html">Join Founders Lab</a>
         </div>
         <div class="finalcta__card">
-          <span class="finalcta__label">AI Readiness</span>
-          <a class="finalcta__val" href="ai-workforce-sme-adoption.html">AI Workforce &amp; SME Adoption</a>
+          <span class="finalcta__label">Organizations</span>
+          <a class="finalcta__val" href="learn.html">Training &amp; AI Adoption</a>
         </div>
         <div class="finalcta__card">
           <span class="finalcta__label">Follow</span>
@@ -41,12 +41,15 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <img class="footer__logo" src="assets/img/aic-logo-white.png" alt="Alexander Innovation Centre" width="1397" height="655">
-      <p class="footer__tag">Innovation. Education. Industry. Impact.</p>
+      <p class="footer__tag">Connect. Learn. Build. Validate. Accelerate. Scale.</p>
       <p class="footer__meta">Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <a href="https://alexic.ca">alexic.ca</a> · <a href="mailto:hello@alexic.ca">hello@alexic.ca</a></p>
       <p class="footer__links"><a href="contact.html">Contact</a> · <a href="about-aic.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="https://www.linkedin.com/company/alexinnovationc/" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </footer>`;
 
   var mount = document.getElementById("site-footer");
-  if (mount) mount.innerHTML = html;
+  if (mount) {
+    var prefix = /\/events\//.test(location.pathname) ? "../" : "";
+    mount.innerHTML = html.replace(/(href|src)="(?!https?:|mailto:|#)([^"]+)"/g, function (_, attr, value) { return attr + '="' + prefix + value + '"'; });
+  }
 })();
