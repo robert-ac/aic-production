@@ -1,4 +1,4 @@
-/* Section rail — right-edge scrollspy for the homepage.
+/* Section rail, right-edge scrollspy for the homepage.
    Highlights the section in view, drives the fibre-optic progress thread,
    and fades the rail in once the visitor leaves the hero. */
 (function () {

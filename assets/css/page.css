@@ -85,6 +85,12 @@ main, .pnav, .footer { position: relative; z-index: 1; }
 /* shared animated mega menu for detail pages */
 .mm { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(0.42rem, 0.75vw, 0.75rem); }
 .mm__item { position: relative; }
+@media (min-width: 1101px) { .mm-toggle { display: none !important; } }
+.mm-toggle span { position: relative; display: block; width: 14px; height: 14px; margin: auto; }
+.mm-toggle span::before,
+.mm-toggle span::after { content: ""; position: absolute; left: 1px; top: 6px; width: 12px; height: 1.5px; border-radius: 2px; background: currentColor; transition: transform 0.2s ease; }
+.mm-toggle span::after { transform: rotate(90deg); }
+.mm__item.is-open .mm-toggle span::after { transform: rotate(0); }
 .mm__top { position: relative; display: inline-flex; align-items: center; gap: 0.35rem; min-height: 2.2rem; white-space: nowrap; }
 .mm__top::before {
   content: ""; position: absolute; left: 50%; bottom: 2px;

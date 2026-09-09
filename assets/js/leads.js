@@ -2,7 +2,7 @@
    AIC lead capture  ->  Supabase  (table: public.leads)
    Shared by every page that has a #contactForm.
 
-   SETUP (one time, ~5 min) — see docs/leads-supabase.md:
+   SETUP (one time, ~5 min), see docs/leads-supabase.md:
      1. Create a free project at supabase.com
      2. SQL Editor -> run the SQL in docs/leads-supabase.md (table + insert policy)
      3. Project Settings -> API -> copy "Project URL" and the "anon public" key

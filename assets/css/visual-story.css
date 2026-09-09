@@ -1,0 +1,24 @@
+/* Shared artwork treatment; scoped to preserve the original homepage stage. */
+.core-page .visual-pagehead{display:grid;grid-template-columns:1fr 1fr;gap:36px 48px;align-items:center;padding-top:72px;padding-bottom:30px}
+.core-page .visual-pagehead__copy{min-width:0}
+.core-page .visual-pagehead h1{font-size:clamp(36px,4.1vw,60px);line-height:1.1;letter-spacing:-.055em;margin:22px 0;max-width:12ch}
+.core-page .visual-pagehead .plead{font-size:17px;line-height:1.75;max-width:44ch}
+.visual-pagehead__art{position:relative;margin:0;overflow:hidden;border-radius:22px;background:#061323;box-shadow:0 24px 60px #09233b18;align-self:stretch;min-height:430px}
+.visual-pagehead__art img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.visual-pagehead__art figcaption{position:absolute;bottom:0;left:0;right:0;padding:48px 28px 24px;background:linear-gradient(transparent,#04101de6);color:#d5e8f7;font:11px var(--font-mono,monospace);letter-spacing:.13em;text-transform:uppercase}
+.core-page .visual-pagehead .page-sections{grid-column:1/-1;margin-top:12px;width:100%}
+#pillars .door--visual{padding:0 0 24px;overflow:hidden;gap:0}
+#pillars .door--visual .door__art{display:block;width:100%;height:190px;object-fit:cover;margin:0 0 24px;border-bottom:1px solid #ffffff20}
+#pillars .door--visual>:not(.door__art){margin-left:24px;margin-right:24px}
+#pillars .door--visual h3{margin-top:12px}
+#pillars .door--visual p{margin-top:12px;margin-bottom:24px;max-width:30ch}
+#pillars .door--visual .door__go{margin-top:auto}
+@media(min-width:1100px){#pillars .doors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.core-page .visual-pagehead{grid-template-columns:1fr;gap:28px;padding-top:42px}.core-page .visual-pagehead h1{font-size:42px;max-width:16ch}.visual-pagehead__art{min-height:0;aspect-ratio:3/2}.core-page .visual-pagehead .page-sections{grid-column:1;margin-top:0}.visual-pagehead__art figcaption{padding:38px 20px 18px}#pillars .door--visual .door__art{height:auto;aspect-ratio:2/1}}
+
+.core-page .visual-pagehead{padding-top:130px}@media(max-width:760px){.core-page .visual-pagehead{padding-top:110px}}
+
+/* Generated audience icons: transparent assets, consistent optical size. */
+#doors .door__ico--generated{width:88px;height:88px;background:transparent;border:0;border-radius:0;box-shadow:none;margin-bottom:20px;display:block}
+#doors .door__ico--generated img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:600px){#doors .door__ico--generated{width:76px;height:76px;margin-bottom:16px}}

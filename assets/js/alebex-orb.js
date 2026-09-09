@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Alebex orb — a glossy liquid-metal blob (Three.js).
+   Alebex orb, a glossy liquid-metal blob (Three.js).
    A reflective metallic-blue sphere whose surface undulates like liquid
    (animated noise displacement) with environment reflections; it leans toward
    the pointer. No post-processing → transparent (no black box) and light on

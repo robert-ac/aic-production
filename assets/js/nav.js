@@ -6,7 +6,7 @@
   var menu = [
     { label: "Founders Lab", href: "founders-lab.html", links: [
       ["Overview", "founders-lab.html"],
-      ["Membership", "founders-lab.html#membership"],
+      ["Founder Pathway", "founders-lab.html#funnel"],
       ["Founder Community", "founders-lab.html#community"],
       ["Accelerator", "accelerator.html"],
       ["Mentors & EIRs", "founders-lab.html#mentors"],
@@ -14,32 +14,32 @@
     ]},
     { label: "Learn", href: "learn.html", links: [
       ["Overview", "learn.html"],
-      ["Executive AI", "learn.html#executive"],
+      ["Learning Pathways", "learn.html#pathways"],
       ["Corporate AI Training", "ai-workforce-sme-adoption.html"],
       ["Workforce Upskilling", "for-smes.html"],
-      ["Developer → AI Engineer", "learn.html#developer"],
+      ["Developer to AI Engineer", "learn.html#pathways"],
       ["AI Readiness Review", "ai-readiness.html"],
       ["Funding & Grants", "funding.html"]
     ]},
     { label: "Lab", href: "lab.html", links: [
       ["Overview", "lab.html"],
       ["Applied Research", "applied-research.html"],
-      ["AI Pilots & Validation", "lab.html#pilots"],
+      ["AI Pilots & Validation", "lab.html#research"],
       ["AI Infrastructure", "lab.html#infrastructure"],
       ["Compute Lab", "data-centre.html"],
       ["ALEBEX AI", "alebex-ai.html"]
     ]},
     { label: "Accelerator", href: "accelerator.html", links: [
       ["Overview", "accelerator.html"],
-      ["Ideation", "accelerator.html#ideation"],
-      ["Early Startup", "accelerator.html#early"],
-      ["Investor Readiness", "accelerator.html#investor"],
-      ["Growth & U.S. Capital Access", "accelerator.html#growth"],
+      ["Ideation", "accelerator.html#stages"],
+      ["Early Startup", "accelerator.html#stages"],
+      ["Investor Readiness", "accelerator.html#stages"],
+      ["Growth & U.S. Capital Access", "accelerator.html#stages"],
       ["Featured Ventures", "accelerator.html#ventures"]
     ]},
     { label: "About", href: "about-aic.html", links: [
       ["About AIC", "about-aic.html"],
-      ["How AIC Works", "five-pillars.html"],
+      ["How AIC Works", "index.html#how"],
       ["Innovation Nights", "innovation-night.html"],
       ["Canada's AI Strategy", "canada-ai-strategy.html"],
       ["News & Insights", "news.html"],
@@ -67,7 +67,7 @@
         var active=group.href===current;
         if(!menu.some(function(g){return g.href===current;})) active=group.links.some(function(l){return l[1].split('#')[0]===current;});
         var id='aic-menu-'+menuIndex+'-'+i;
-        return '<div class="mm__item"><a class="mm__top'+(active?' is-active':'')+'" href="'+url(group.href)+'"'+(group.href===current?' aria-current="page"':'')+'>'+group.label+'</a><button class="mm-toggle" type="button" aria-label="'+group.label+' sections" aria-expanded="false" aria-controls="'+id+'"><span aria-hidden="true">⌄</span></button><div class="mm__panel" id="'+id+'">'+group.links.map(function(l){return '<a href="'+url(l[1])+'">'+l[0].replace(/&/g,'&amp;')+'</a>';}).join('')+'</div></div>';
+        return '<div class="mm__item"><a class="mm__top'+(active?' is-active':'')+'" href="'+url(group.href)+'"'+(group.href===current?' aria-current="page"':'')+'>'+group.label+'</a><button class="mm-toggle" type="button" aria-label="'+group.label+' sections" aria-expanded="false" aria-controls="'+id+'"><span aria-hidden="true"></span></button><div class="mm__panel" id="'+id+'">'+group.links.map(function(l){return '<a href="'+url(l[1])+'">'+l[0].replace(/&/g,'&amp;')+'</a>';}).join('')+'</div></div>';
       }).join('');
     });
     function closeMenus(except) {
@@ -75,10 +75,31 @@
     }
     document.querySelectorAll('.mm__item').forEach(function(item){
       var toggle=item.querySelector('.mm-toggle');
+      var link=item.querySelector('.mm__top');
+      var closeTimer;
+      function desktop(){return window.matchMedia('(min-width:1101px)').matches;}
+      function openMenu(){clearTimeout(closeTimer);closeMenus(item);item.classList.add('is-open');toggle.setAttribute('aria-expanded','true');}
+      item.addEventListener('pointerenter',function(e){if(desktop()&&e.pointerType!=='touch')openMenu();});
+      item.addEventListener('pointerleave',function(){if(desktop())closeTimer=setTimeout(function(){if(!item.contains(document.activeElement))closeMenus();},200);});
+      link.addEventListener('focus',function(){if(desktop())openMenu();});
+      link.addEventListener('keydown',function(e){if(desktop()&&e.key==='ArrowDown'){e.preventDefault();openMenu();item.querySelector('.mm__panel a').focus();}});
+      link.addEventListener('click',function(e){if(desktop()&&window.matchMedia('(hover:none)').matches&&!item.classList.contains('is-open')){e.preventDefault();openMenu();}});
       toggle.addEventListener('click',function(){var open=!item.classList.contains('is-open');closeMenus(item);item.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));});
-      item.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenus();toggle.focus();e.stopPropagation();}});
+      item.addEventListener('keydown',function(e){if(e.key==='Escape'){clearTimeout(closeTimer);(desktop()?link:toggle).focus();closeMenus();e.stopPropagation();}});
       item.addEventListener('focusout',function(e){if(!item.contains(e.relatedTarget)){item.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}});
     });
+    // Older saved stage links now lead to the illustrated pathway.
+    var legacyTargets={
+      'founders-lab.html':{membership:'funnel',acceleration:'funnel',growth:'funnel'},
+      'learn.html':{executive:'pathways',corporate:'pathways',upskilling:'pathways',developer:'pathways'},
+      'accelerator.html':{ideation:'stages',early:'stages',investor:'stages',growth:'stages'}
+    };
+    function resolveLegacyAnchor(){
+      var target=(legacyTargets[current]||{})[location.hash.slice(1)];
+      if(target){history.replaceState(null,'','#'+target);document.getElementById(target).scrollIntoView({block:'start'});}
+    }
+    resolveLegacyAnchor();
+    window.addEventListener('hashchange',resolveLegacyAnchor);
     document.querySelectorAll('header.nav,header.pnav').forEach(function(header,index){
       var links=header.querySelector('.nav__links,.pnav__tabs'); if(!links)return;
       links.id='aic-primary-'+index;

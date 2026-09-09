@@ -9,7 +9,7 @@
       <div class="finalcta__text">
         <span class="overline">Let's Learn and Innovate Together</span>
         <h2 class="finalcta__title">This is the<br><span class="finalcta__accent">beginning.</span></h2>
-        <p class="finalcta__lead">Partner with us in research, training, infrastructure, or industry — bring an idea, an opportunity, or a problem, and we'll collaborate together.</p>
+        <p class="finalcta__lead">Ready to move forward? Bring your idea, business challenge or training goals. Find the people and practical support to take your next step.</p>
       </div>
       <div class="finalcta__grid">
         <div class="finalcta__card">

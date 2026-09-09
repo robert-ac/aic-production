@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Alexander Innovation Centre — scroll engine
+   Alexander Innovation Centre, scroll engine
    - Whole-document scroll progress (0→1) drives video.currentTime (0%→100%).
    - One requestAnimationFrame loop; scroll listened passively. Easing (lerp)
      gives continuous, smooth scrubbing instead of jumpy seeks.
@@ -14,8 +14,8 @@
   /* ----------------------------- CONFIG -------------------------------- */
   const VIDEO_SRC = "assets/video/aic-background.mp4?v=20260615m"; // bump ?v= when you swap the file
   // For HLS, set VIDEO_SRC to a .m3u8 and load hls.js, or use an <source> list.
-  const EASE      = 0.18;    // 0..1 — lower = smoother/heavier scrub, higher = snappier
-  const SEEK_MIN  = 0.008;   // seconds — ignore micro-seeks to spare the decoder
+  const EASE      = 0.18;    // 0..1, lower = smoother/heavier scrub, higher = snappier
+  const SEEK_MIN  = 0.008;   // seconds, ignore micro-seeks to spare the decoder
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -81,7 +81,7 @@
     smooth += (target - smooth) * (reduceMotion ? 1 : EASE);
     if (Math.abs(target - smooth) < 0.0002) smooth = target;
 
-    // 1 — scrub the video (the building plays day→night as you scroll).
+    // 1, scrub the video (the building plays day→night as you scroll).
     //     No scale/transform: the shot is shown whole, so we never crop it.
     if (videoReady && duration && !reduceMotion) {
       const t = Math.min(smooth * duration, Math.max(0, duration - 0.04));
@@ -90,15 +90,15 @@
       }
     }
 
-    // 2 — progress bar
+    // 2, progress bar
     fill.style.width = (smooth * 100).toFixed(2) + "%";
 
-    // 3 — orbit glow: gentle constant drift in the navy margins behind the building
+    // 3, orbit glow: gentle constant drift in the navy margins behind the building
     if (orbits && !reduceMotion) {
       orbits.style.transform = "translateX(-50%) translateY(" + (smooth * -70).toFixed(1) + "px)";
     }
 
-    // 4 — generic parallax layers
+    // 4, generic parallax layers
     for (const el of (reduceMotion ? [] : parallaxEls)) {
       if (el === orbits) continue;
       const rate = parseFloat(el.dataset.parallax) || 0;
@@ -172,7 +172,7 @@
     ctx.clearRect(0, 0, cw, ch);
     const cx = cw * 0.5, cy = ch * (0.42 - smooth * 0.1);
 
-    // faint orbital rings — rotate with scroll progress
+    // faint orbital rings, rotate with scroll progress
     const rings = [
       { rx: cw * 0.30, ry: ch * 0.12, rot: smooth * 1.4,        col: "rgba(31,166,255,0.18)" },
       { rx: cw * 0.20, ry: ch * 0.22, rot: -smooth * 1.1 + 0.7, col: "rgba(230,57,70,0.16)" },
@@ -190,7 +190,7 @@
       ctx.restore();
     }
 
-    // particles — parallax offset by depth & scroll
+    // particles, parallax offset by depth & scroll
     const shift = smooth * 220;
     for (const p of particles) {
       p.x += p.vx; p.y += p.vy; p.tw += 0.02;
