@@ -1,0 +1,205 @@
+/* ==========================================================================
+   AIC home v2 — one page, continuous scroll.
+   Three sections carry the site: Community, Acceleration, Services.
+   Palette: deep navy #0B1628 / warm white #F8FAFC / blue #2563EB · #60A5FA.
+   Type: Inter throughout; hierarchy from size + weight, not decoration.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- shared - */
+:root{
+  --v2-navy:#0B1628;
+  --v2-navy-2:#0E1B30;
+  --v2-white:#F8FAFC;
+  --v2-body:#C9D6E5;
+  --v2-muted:#8FA6BF;
+  --v2-faint:#7D93AC;
+  --v2-blue:#2563EB;
+  --v2-blue-lt:#60A5FA;
+  --v2-line:rgba(159,179,200,.16);
+}
+body{background:var(--v2-navy)}
+
+.sec{padding:clamp(5rem,10vh,8rem) 0}
+.wrap{width:min(1160px,calc(100% - 3rem));margin-inline:auto}
+
+.sec h2,.sec h3{font-family:var(--font-body);color:var(--v2-white);letter-spacing:-.03em}
+.block__no{
+  font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--v2-muted);margin:0 0 1.25rem;
+}
+.text-link{
+  font-family:var(--font-body);font-size:.9375rem;font-weight:500;color:var(--v2-blue-lt);
+  text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);padding-bottom:2px;
+}
+.text-link:hover{border-bottom-color:var(--v2-blue-lt)}
+
+.btn{
+  font-family:var(--font-body);font-size:.9375rem;font-weight:600;min-height:52px;
+  padding-inline:1.7rem;border-radius:6px;box-shadow:none!important;transform:none!important;
+  display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+}
+.btn--primary{background:var(--v2-blue)!important;border:1px solid var(--v2-blue)!important;color:#fff!important;background-image:none!important}
+.btn--primary:hover{background:#1D4ED8!important;border-color:#1D4ED8!important}
+.btn--ghost{background:transparent!important;border:1px solid rgba(201,214,229,.3)!important;color:var(--v2-white)!important;backdrop-filter:none!important}
+.btn--ghost:hover{border-color:rgba(201,214,229,.6)!important;background:rgba(248,250,252,.06)!important}
+
+/* ------------------------------------------------------------------ hero - */
+/* Concept 1: hold the lit frame; copy left, building breathes right. */
+#hero{position:relative;min-height:100vh;display:grid;align-items:center;
+  padding:clamp(7.4rem,13vh,9.6rem) 0 clamp(2rem,4vh,3rem);background:transparent;overflow:hidden}
+#hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(100deg,rgba(9,18,33,.94) 0%,rgba(9,18,33,.86) 30%,rgba(9,18,33,.45) 56%,rgba(9,18,33,.05) 78%,rgba(9,18,33,0) 100%);
+}
+#hero .hero__wrap{position:relative;z-index:1;text-align:left;max-width:1160px}
+.hero__wrap *{text-shadow:none!important}
+.hero__wrap .hero__title,.hero__wrap .hero__sub{margin-left:0;margin-right:0}
+.hero__eyebrow{
+  display:inline-flex;flex-direction:column;align-items:flex-start;gap:1.1rem;
+  font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--v2-muted);margin:0 0 2rem;
+}
+.hero__eyebrow::after{content:"";width:36px;height:1px;background:var(--v2-blue);border-radius:0}
+.hero__title{
+  font-family:var(--font-body);font-weight:600;font-size:clamp(2.5rem,5.4vw,5rem);
+  line-height:1.04;letter-spacing:-.035em;color:var(--v2-white);max-width:15ch;margin:0;
+}
+.hero__title .hl{color:var(--v2-blue-lt)}
+.hero__sub{
+  font-family:var(--font-body);font-size:1.1875rem;font-weight:400;line-height:1.65;
+  color:var(--v2-body);max-width:44ch;margin:1.75rem 0 0;
+}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem;justify-content:flex-start}
+.hero__soon{font-family:var(--font-body);font-size:.8125rem;color:var(--v2-faint);margin:3.5rem 0 0}
+.hero__soon span{color:var(--v2-body);font-weight:500}
+
+/* ------------------------------------------------------- next event (Luma) */
+/* The event graphic is the point; it sits high and stays legible at 400px. */
+.sec--event{padding-top:clamp(3rem,6vh,4.5rem);padding-bottom:clamp(3rem,6vh,4.5rem)}
+.nextev{
+  display:grid;grid-template-columns:400px minmax(0,1fr);gap:clamp(2rem,4vw,3.5rem);
+  align-items:center;padding:clamp(1.25rem,2vw,1.75rem);
+  border:1px solid var(--v2-line);border-radius:16px;background:rgba(14,27,48,.72);backdrop-filter:blur(10px);
+}
+.nextev__art{display:block;border-radius:12px;overflow:hidden;line-height:0;background:#08111F}
+.nextev__art img{display:block;width:100%;height:auto;transition:transform .5s ease}
+.nextev__art:hover img{transform:scale(1.02)}
+.nextev__copy{min-width:0;padding-right:clamp(0rem,1.5vw,1rem)}
+.nextev__tag{
+  font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--v2-blue-lt);margin:0 0 1rem;
+}
+.nextev__copy h2{font-size:clamp(1.6rem,2.6vw,2.25rem);line-height:1.12;margin:0;font-weight:600}
+.nextev__copy h2 em{font-style:normal;color:var(--v2-blue-lt)}
+.nextev__sub{font-family:var(--font-body);font-size:1.0625rem;color:var(--v2-body);margin:.65rem 0 0;font-weight:500}
+.nextev__desc{font-family:var(--font-body);font-size:1rem;line-height:1.6;color:var(--v2-muted);margin:1rem 0 0;max-width:46ch}
+.nextev__facts{display:flex;flex-wrap:wrap;gap:2.25rem;margin:1.5rem 0 0}
+.nextev__facts dt{
+  font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--v2-faint);margin:0 0 .4rem;
+}
+.nextev__facts dd{font-family:var(--font-body);font-size:.9375rem;line-height:1.5;color:var(--v2-body);margin:0}
+.nextev__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;margin-top:1.75rem}
+
+/* ------------------------------------------------ community / acceleration */
+.sec--alt{background:var(--v2-navy-2)}
+.block{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.block--flip .block__copy{order:2}
+.block--flip .block__art{order:1}
+.block__copy h2{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.1;margin:0;font-weight:600}
+.block__lead{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--v2-body);margin:1.25rem 0 0;max-width:46ch}
+.block__list{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;gap:.85rem}
+.block__list li{
+  font-family:var(--font-body);font-size:.9375rem;line-height:1.55;color:var(--v2-muted);
+  padding-left:1.4rem;position:relative;
+}
+.block__list li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--v2-blue)}
+.block__steps{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;gap:0}
+.block__steps li{display:flex;gap:1.1rem;align-items:flex-start;padding:1.1rem 0;border-top:1px solid var(--v2-line)}
+.block__steps li:last-child{border-bottom:1px solid var(--v2-line)}
+.block__steps b{font-family:var(--font-body);font-size:.75rem;font-weight:600;color:var(--v2-blue-lt);padding-top:.2rem;letter-spacing:.06em}
+.block__steps span{display:block;font-family:var(--font-body);font-size:.9375rem;line-height:1.55;color:var(--v2-muted)}
+.block__steps strong{display:block;color:var(--v2-white);font-weight:600;margin-bottom:.2rem}
+.block__cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;margin-top:2rem}
+.block__note{font-family:var(--font-body);font-size:.8125rem;line-height:1.6;color:var(--v2-faint);margin:1.75rem 0 0;max-width:52ch}
+.block__art{display:block;border-radius:14px;overflow:hidden;line-height:0;border:1px solid var(--v2-line);background:#08111F}
+.block__art img{display:block;width:100%;height:auto;transition:transform .5s ease}
+.block__art:hover img{transform:scale(1.02)}
+
+/* ------------------------------------------------------------- services -- */
+.sec--services{border-top:1px solid var(--v2-line)}
+.services__head{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.1;margin:0;font-weight:600}
+.services__lead{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--v2-body);margin:1rem 0 0;max-width:48ch}
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:3rem}
+.svc__card{
+  display:flex;flex-direction:column;text-decoration:none;overflow:hidden;
+  border:1px solid var(--v2-line);border-radius:14px;background:rgba(14,27,48,.6);
+  transition:border-color .3s ease,background .3s ease;
+}
+.svc__card:hover{border-color:rgba(96,165,250,.4);background:rgba(14,27,48,.9)}
+.svc__art{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.svc__body{padding:1.5rem}
+.svc__body h3{font-size:1.3125rem;margin:0;font-weight:600}
+.svc__body p{font-family:var(--font-body);font-size:.9375rem;line-height:1.6;color:var(--v2-muted);margin:.75rem 0 1.25rem}
+.svc__go{font-family:var(--font-body);font-size:.875rem;font-weight:600;color:var(--v2-blue-lt)}
+.svc__go::after{content:" \2192"}
+
+/* ----------------------------------------------------------------- visit - */
+.sec--visit{background:var(--v2-navy-2);border-top:1px solid var(--v2-line)}
+.visitcard{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
+.visitcard__copy h2{font-size:clamp(1.7rem,2.9vw,2.5rem);line-height:1.12;margin:0;font-weight:600}
+.visitcard__addr{font-family:var(--font-body);font-size:1rem;line-height:1.65;color:var(--v2-body);margin:1.25rem 0 0}
+.visitcard__map{border-radius:14px;overflow:hidden;border:1px solid var(--v2-line);line-height:0;background:#08111F}
+.visitcard__map iframe{display:block;width:100%;height:clamp(280px,38vh,380px);border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* ---------------------------------------------------------------- footer - */
+.footer{border-top:1px solid var(--v2-line);padding:clamp(3rem,6vh,4.5rem) 0}
+.footer__tag{color:var(--v2-muted)}
+.footer__meta,.footer__links{color:var(--v2-faint)}
+.footer__links a,.footer__meta a{color:var(--v2-body);text-decoration:none}
+.footer__links a:hover,.footer__meta a:hover{color:var(--v2-blue-lt)}
+
+/* ------------------------------------------------------------ responsive - */
+@media(max-width:900px){
+  .nextev{grid-template-columns:1fr;gap:1.75rem}
+  .nextev__art{max-width:420px;margin-inline:auto;width:100%}
+  .block,.visitcard{grid-template-columns:1fr;gap:2.5rem}
+  .block--flip .block__copy{order:1}
+  .block--flip .block__art{order:2}
+  .block__art{max-width:560px}
+  .svc{grid-template-columns:1fr;gap:1rem}
+  .svc__art{aspect-ratio:16/7}
+}
+@media(max-width:760px){
+  .wrap{width:calc(100% - 2.5rem)}
+  .sec{padding:clamp(3.5rem,8vh,5rem) 0}
+  #hero{min-height:auto;padding:clamp(6.5rem,16vh,8rem) 0 clamp(3rem,7vh,4rem)}
+  #hero::before{background:linear-gradient(180deg,rgba(9,18,33,.9) 0%,rgba(9,18,33,.74) 50%,rgba(9,18,33,.93) 100%)}
+  .hero__title{font-size:clamp(2.125rem,8.2vw,2.75rem);max-width:100%;letter-spacing:-.025em}
+  .hero__title br{display:inline}
+  .hero__sub{font-size:1rem;max-width:100%}
+  .hero__cta{gap:.65rem}
+  .hero__cta .btn{width:100%}
+  .hero__soon{margin-top:2.25rem}
+  .nextev__facts{gap:1.5rem}
+  .nextev__actions{gap:1rem}
+  .block__cta,.nextev__actions{flex-direction:column;align-items:stretch}
+  .block__cta .btn,.nextev__actions .btn{width:100%}
+  .block__cta .text-link,.nextev__actions .text-link{text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .nextev__art img,.block__art img,.svc__card{transition:none}
+  .nextev__art:hover img,.block__art:hover img{transform:none}
+}
+
+/* Lit still under the footage: first paint is always the building lit up,
+   never the flat opening frame. The video fades over it once it seeks. */
+.stage__still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 62%;z-index:2;pointer-events:none}
+
+/* The footage belongs to the hero only. Everything below it sits on solid
+   navy, so body copy is never competing with the building for contrast. */
+#next-event,#community,#accelerate,#services,#visit,.footer{position:relative;background:var(--v2-navy)}
+.sec--alt{background:var(--v2-navy-2)}
+#next-event{background:linear-gradient(180deg,rgba(11,22,40,.86) 0%,var(--v2-navy) 22%,var(--v2-navy) 100%);backdrop-filter:blur(6px)}
+.nextev{background:rgba(14,27,48,.92)}
