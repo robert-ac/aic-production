@@ -47,32 +47,14 @@
     video.muted = true;            // required for programmatic control on most browsers
     video.playsInline = true;
     video.preload = "auto";
-    // Media fragment makes the browser decode/paint the chosen frame first,
-    // so the hero never flashes t=0 before the scrub logic kicks in.
-    var startAt = parseFloat(video.dataset.start) || 0;
-    video.src = VIDEO_SRC + (startAt ? "#t=" + startAt : "");
+    video.src = VIDEO_SRC;
 
     video.addEventListener("loadedmetadata", () => {
       duration = video.duration || 0;
       if (duration > 0) {
         videoReady = true;
-        // With data-start we hold the poster still until the video has really
-        // landed on that frame, so the hero never flashes the opening frame.
-        if (startAt > 0 && startAt < duration) {
-          video.addEventListener("seeked", function reveal() {
-            // Some decoders ignore the seek and land back on 0; in that case we
-            // keep the still rather than reveal the flat opening frame.
-            if (Math.abs(video.currentTime - startAt) > 0.5) return;
-            video.removeEventListener("seeked", reveal);
-            video.classList.add("is-live");
-            stopCanvas();
-            wake();
-          });
-          try { video.currentTime = startAt; lastSeek = startAt; } catch (e) {}
-        } else {
-          video.classList.add("is-live");
-          stopCanvas();   // the building now fills the screen, so the fallback is never seen
-        }
+        video.classList.add("is-live");
+        stopCanvas();   // the building now fills the screen, so the fallback is never seen
         wake();
       }
     });
@@ -102,11 +84,7 @@
     // 1, scrub the video (the building plays day→night as you scroll).
     //     No scale/transform: the shot is shown whole, so we never crop it.
     if (videoReady && duration && !reduceMotion) {
-      // Optional data-start: hold the hero on a chosen frame (e.g. the lit
-      // building) and scrub from there, instead of always opening on t=0.
-      const start = Math.min(parseFloat(video.dataset.start) || 0, duration - 0.1);
-      const span  = Math.max(0.1, duration - start);
-      const t = Math.min(start + smooth * span, Math.max(0, duration - 0.04));
+      const t = Math.min(smooth * duration, Math.max(0, duration - 0.04));
       if (!video.seeking && Math.abs(t - lastSeek) > SEEK_MIN) {
         try { video.currentTime = t; lastSeek = t; } catch (e) {}
       }
