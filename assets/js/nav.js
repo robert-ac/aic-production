@@ -5,42 +5,32 @@
 (function () {
   var menu = [
     { label: "Founders Lab", href: "founders-lab.html", links: [
-      ["Overview", "founders-lab.html"],
       ["Founder Pathway", "founders-lab.html#funnel"],
       ["Founder Community", "founders-lab.html#community"],
-      ["Accelerator", "accelerator.html"],
       ["Mentors & EIRs", "founders-lab.html#mentors"],
       ["Innovation Nights", "innovation-night.html"]
     ]},
-    { label: "Learn", href: "learn.html", links: [
-      ["Overview", "learn.html"],
+    { label: "AI Adoption", href: "learn.html", links: [
       ["Learning Pathways", "learn.html#pathways"],
       ["Corporate AI Training", "ai-workforce-sme-adoption.html"],
       ["Workforce Upskilling", "for-smes.html"],
-      ["Developer to AI Engineer", "learn.html#pathways"],
       ["AI Readiness Review", "ai-readiness.html"],
       ["Funding & Grants", "funding.html"]
     ]},
-    { label: "Lab", href: "lab.html", links: [
-      ["Overview", "lab.html"],
-      ["Applied Research", "applied-research.html"],
+    { label: "Applied Research", href: "lab.html", links: [
+      ["Research & Innovation", "applied-research.html"],
       ["AI Pilots & Validation", "lab.html#research"],
       ["AI Infrastructure", "lab.html#infrastructure"],
       ["Compute Lab", "data-centre.html"],
       ["ALEBEX AI", "alebex-ai.html"]
     ]},
     { label: "Accelerator", href: "accelerator.html", links: [
-      ["Overview", "accelerator.html"],
-      ["Ideation", "accelerator.html#stages"],
-      ["Early Startup", "accelerator.html#stages"],
-      ["Investor Readiness", "accelerator.html#stages"],
-      ["Growth & U.S. Capital Access", "accelerator.html#stages"],
-      ["Featured Ventures", "accelerator.html#ventures"]
+      ["Venture Stages", "accelerator.html#stages"],
+      ["Featured Ventures", "accelerator.html#ventures"],
+      ["ALEBEX AI", "alebex-ai.html"]
     ]},
     { label: "About", href: "about-aic.html", links: [
-      ["About AIC", "about-aic.html"],
       ["How AIC Works", "index.html#how"],
-      ["Innovation Nights", "innovation-night.html"],
       ["Canada's AI Strategy", "canada-ai-strategy.html"],
       ["News & Insights", "news.html"],
       ["FAQ", "faq.html"],
