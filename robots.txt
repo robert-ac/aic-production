@@ -4,4 +4,4 @@ Disallow: /button-styles.html
 Disallow: /training.html
 Disallow: /404.html
 
-Sitemap: https://alexic.ca/sitemap.xml
+Sitemap: https://www.alexic.ca/sitemap.xml

@@ -20,7 +20,7 @@ Opening `index.html` directly also works for most pages.
 ## Structure
 
 Pages live at the repository root so production URLs match their canonical paths
-(`https://alexic.ca/<page>.html`). Shared assets are grouped by type under `assets/`.
+(`https://www.alexic.ca/<page>.html`). Shared assets are grouped by type under `assets/`.
 
 ```
 index.html                       Home (scroll-scrubbed video hero, operating model, ALEBEX orb)
@@ -71,4 +71,4 @@ docs/                            Content-strategy reference (not part of the liv
 - External links: event registration on [Luma](https://luma.com/b90nqjol),
   updates on [LinkedIn](https://www.linkedin.com/company/alexinnovationc/posts/).
 
-Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <https://alexic.ca>
+Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <https://www.alexic.ca>
