@@ -67,7 +67,7 @@ docs/                            Content-strategy reference (not part of the liv
 - **Palette / type:** navy + white + cyan; Sora / Inter / JetBrains Mono.
 - **Background video** is scrubbed by page scroll via `assets/scroll.js`.
 - **ALEBEX orb** is a Three.js liquid sphere (`assets/alebex-orb.js`) with a CSS fallback,
-  linking demos to <https://alebex.ai/>.
+  linking demos to <https://www.alebex.ai/>.
 - External links: event registration on [Luma](https://luma.com/b90nqjol),
   updates on [LinkedIn](https://www.linkedin.com/company/alexinnovationc/posts/).
 

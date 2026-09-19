@@ -28,6 +28,7 @@
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Alexander Innovation Centre?", "acceptedAnswer": {"@type": "Answer", "text": "AIC is a Vancouver-based AI innovation ecosystem. It connects founders, AI talent, researchers, companies and investors through four pillars: Founders Lab (community and startup funnel), AI Adoption (AI training and upskilling), Applied Research (applied research and pilots), and Accelerator (structured startup acceleration)."}}, {"@type": "Question", "name": "How do founders join AIC?", "acceptedAnswer": {"@type": "Answer", "text": "Founders enter through Founders Lab open membership: join the community, take part in events and workshops, build with mentors and peers, and get discovered. Promising startups can progress into AIC's selective acceleration pathway."}}, {"@type": "Question", "name": "Where should my business start with AI?", "acceptedAnswer": {"@type": "Answer", "text": "Start with a free AI Readiness Review. AIC looks at how your work actually flows and shows you where AI will save time or money, and where it won't, before you spend on any tools."}}, {"@type": "Question", "name": "Can AIC train my team?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AIC trains owners, managers, and staff to use AI in real business tasks, from half-day briefings to multi-week cohorts, delivered in Vancouver or virtually across Canada."}}]}
 </script>
 <link rel="stylesheet" href="assets/css/home-polish.css?v=20260909review" />
+<link rel="stylesheet" href="assets/css/alebex-polish.css?v=20260919l" />
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 <link rel="stylesheet" href="assets/css/visual-story.css?v=20260908b" />
 </head>
@@ -221,21 +222,33 @@
   </section>
 
   <!-- ===================== 7 · BUILT AT AIC, ALEBEX ======================= -->
-  <section class="sec sec--flagship" id="alebex">
+  <section class="sec sec--flagship alebex-split-orb" id="alebex">
     <div class="wrap">
       <p class="kicker"><span class="kicker__dot"></span>Built at AIC · ALEBEX AI</p>
     </div>
-    <div class="pillar-feature reveal">
-      <div class="pillar-feature__text floorpanel__card">
+    <div class="pillar-feature reveal alebex-split-orb__row">
+      <div class="pillar-feature__text floorpanel__card alebex-split-orb__left">
         <span class="floorpanel__no mono">AIC Technology</span>
-        <h3>From problem → product → deployment.</h3>
-        <p><strong>ALEBEX AI</strong> was built at AIC and is deployed with real Canadian businesses:
-           it handles routine calls, reminders, bookings, follow-ups, and intake, with human
-           escalation built in. It's working proof of AIC's execution capability.</p>
-        <p class="floor__tag">Missed-call recovery, booking, lead follow-up, and routine admin.</p>
-        <a class="btn btn--primary feature__cta" href="alebex-ai.html">Explore ALEBEX AI </a>
+        <h3>ALEBEX AI</h3>
+        <p class="alebex-lede">A voice agent — built and deployed by AIC.</p>
+                <ul class="alebex-overlay-labels" data-alebex-motion aria-label="ALEBEX AI">
+          <li>Canadian sovereign AI</li>
+          <li>Data held in Canada</li>
+          <li>Incubated at AIC</li>
+        </ul>
+        <div class="feature__actions">
+          <a class="btn btn--primary feature__cta" href="https://www.alebex.ai/#demo" target="_blank" rel="noopener">Try live demo</a>
+          <a class="btn btn--ghost" href="alebex-ai.html">Built by AIC</a>
+        </div>
       </div>
-      <div class="pillar-feature__orb"><div class="orb3d" id="alebexOrb"><canvas id="alebexCanvas"></canvas><span class="orb3d__hint" aria-hidden="true">Click me, I talk!</span><a class="orb3d__link" href="https://alebex.ai/#demo" target="_blank" rel="noopener" aria-label="Book an ALEBEX AI demo"></a><span class="orb3d__tag">ALEBEX AI · Agentic AI</span></div></div>
+      <div class="pillar-feature__orb alebex-split-orb__right">
+        <div class="orb3d" id="alebexOrb">
+          <canvas id="alebexCanvas"></canvas>
+          <span class="orb3d__hint" aria-hidden="true">Click me, I talk!</span>
+          <a class="orb3d__link" href="https://www.alebex.ai/#demo" target="_blank" rel="noopener" aria-label="Book an ALEBEX AI demo"></a>
+          <span class="orb3d__tag">ALEBEX AI · Agentic voice</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -368,6 +381,7 @@
 
 <script src="assets/js/scroll.js?v=20260908c"></script>
 <script type="module" src="assets/js/alebex-orb.js?v=20260908a"></script>
+<script src="assets/js/alebex-motion.js?v=20260919i" defer></script>
 <script src="assets/js/nav.js?v=20260915-production-nav"></script>
 <script src="assets/js/rail.js?v=20260908a"></script>
 </body>
