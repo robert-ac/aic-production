@@ -1,0 +1,231 @@
+/* ==========================================================================
+   alebex-polish.css — Track A visual polish (navy/cyan, additive).
+   Home #alebex flagship, alebex-ai.html story, light hub CTA/spacing.
+   Loaded after site.css / page.css / refinement.css.
+   ========================================================================== */
+
+/* ---------- Home flagship #alebex ---------- */
+#alebex.sec--flagship {
+  padding-block: clamp(3rem, 7vh, 5.5rem);
+}
+#alebex .pillar-feature {
+  padding: clamp(1.6rem, 3.5vw, 2.6rem);
+  border: 1px solid rgba(122, 191, 255, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(80% 70% at 92% 8%, rgba(79, 198, 255, 0.14), transparent 55%),
+    linear-gradient(145deg, rgba(6, 28, 52, 0.92), rgba(8, 40, 70, 0.78));
+  box-shadow: 0 28px 70px rgba(0, 10, 28, 0.35);
+  gap: clamp(1.8rem, 4vw, 3.2rem);
+  align-items: center;
+}
+#alebex .floorpanel__card {
+  color: #eaf4fc;
+}
+#alebex .floorpanel__no {
+  color: #57caff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+#alebex .pillar-feature h3 {
+  color: #fff;
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  letter-spacing: -0.03em;
+}
+#alebex .pillar-feature__text > p {
+  color: rgba(220, 236, 248, 0.88);
+  max-width: 46ch;
+  line-height: 1.7;
+}
+#alebex .floor__tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.1rem 0 1.35rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+#alebex .floor__tag span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 191, 255, 0.32);
+  background: rgba(10, 36, 62, 0.55);
+  color: #cfe8fa;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+#alebex .feature__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 0.4rem;
+}
+#alebex .feature__actions .btn--primary {
+  min-height: 48px;
+}
+#alebex .feature__actions .btn--ghost {
+  min-height: 48px;
+  color: #d7ecfb;
+  border-color: rgba(143, 205, 255, 0.4);
+  background: rgba(12, 40, 68, 0.35);
+}
+#alebex .feature__actions .btn--ghost:hover {
+  color: #fff;
+  border-color: rgba(143, 205, 255, 0.7);
+  background: rgba(20, 70, 110, 0.45);
+}
+#alebex .pillar-feature__orb {
+  min-height: 280px;
+}
+@media (max-width: 820px) {
+  #alebex .pillar-feature {
+    padding: 1.35rem 1.2rem 1.8rem;
+    border-radius: 18px;
+  }
+  #alebex .feature__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #alebex .feature__actions .btn {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ---------- alebex-ai.html product story ---------- */
+body.alebex-page {
+  --accent: #1E8FE8;
+  --accent-soft: rgba(30, 143, 232, 0.14);
+}
+body.alebex-page .pagehead h1 {
+  max-width: 18ch;
+}
+body.alebex-page .alebex-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+body.alebex-page .alebex-hero-actions .btn {
+  min-height: 48px;
+}
+body.alebex-page .alebex-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+body.alebex-page .alebex-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 136, 245, 0.28);
+  background: rgba(20, 136, 245, 0.08);
+  color: #0B4F86;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+body.alebex-page .alebex-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.85fr);
+  gap: clamp(1.8rem, 4vw, 3.2rem);
+  align-items: center;
+}
+body.alebex-page .alebex-split .orb3d {
+  width: min(300px, 78%);
+}
+body.alebex-page .alebex-cta {
+  margin-top: clamp(1rem, 3vh, 2rem);
+  padding: clamp(1.6rem, 3.5vw, 2.4rem);
+  border-radius: 20px;
+  border: 1px solid rgba(20, 136, 245, 0.28);
+  background:
+    radial-gradient(70% 80% at 100% 0%, rgba(79, 198, 255, 0.16), transparent 60%),
+    linear-gradient(145deg, #071a33, #0d2f55);
+  color: #eaf4fc;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  gap: 1.4rem;
+  align-items: center;
+}
+body.alebex-page .alebex-cta h2 {
+  color: #fff;
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+}
+body.alebex-page .alebex-cta p {
+  margin: 0;
+  color: rgba(220, 236, 248, 0.86);
+  max-width: 48ch;
+  line-height: 1.65;
+}
+body.alebex-page .alebex-cta .btn--primary {
+  min-height: 50px;
+  white-space: nowrap;
+}
+body.alebex-page .alebex-outcomes .pcard h3 {
+  font-size: 1.2rem;
+}
+@media (max-width: 820px) {
+  body.alebex-page .alebex-split {
+    grid-template-columns: 1fr;
+  }
+  body.alebex-page .alebex-split .orb3d {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+  body.alebex-page .alebex-cta {
+    grid-template-columns: 1fr;
+  }
+  body.alebex-page .alebex-cta .btn {
+    justify-content: center;
+    width: 100%;
+  }
+  body.alebex-page .alebex-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  body.alebex-page .alebex-hero-actions .btn {
+    justify-content: center;
+  }
+}
+
+/* ---------- Light hub CTA / spacing clarity ---------- */
+.core-page .pathway-pagehead .row,
+.core-page .psection .row {
+  gap: 0.85rem;
+}
+.core-page .pathway-copy {
+  padding-top: 32px;
+}
+.core-page .pathway-copy .btn--primary {
+  min-height: 48px;
+  flex-shrink: 0;
+}
+.core-page .pathway-note {
+  color: #4d6476;
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+.core-page .pagehead .plead {
+  max-width: 58ch;
+}
+body.core-about .pagehead {
+  padding-bottom: 1.2rem;
+}
+body.core-about .pagehead .plead {
+  max-width: 56ch;
+}
+@media (max-width: 800px) {
+  .core-page .pathway-copy {
+    padding-top: 22px;
+  }
+}
