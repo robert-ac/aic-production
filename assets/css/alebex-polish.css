@@ -441,3 +441,104 @@ body.alebex-page .alebex-feature-card:hover {
     transition: none;
   }
 }
+
+/* ---------- Atmosphere + typography overlays (no AI icon cards) ---------- */
+.alebex-atmosphere {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(3.2rem, 8vh, 5.5rem) 0;
+  border-radius: 0;
+}
+.alebex-atmosphere__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.alebex-atmosphere__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.04);
+  filter: saturate(1.05) contrast(1.05);
+}
+.alebex-atmosphere__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(3, 14, 28, 0.88) 0%, rgba(6, 28, 52, 0.62) 48%, rgba(6, 28, 52, 0.35) 100%),
+    linear-gradient(to top, rgba(2, 10, 22, 0.55), transparent 45%);
+}
+.alebex-atmosphere__veil--light {
+  background:
+    linear-gradient(105deg, rgba(248, 251, 255, 0.9) 0%, rgba(232, 242, 252, 0.72) 42%, rgba(10, 40, 70, 0.28) 100%);
+}
+.alebex-atmosphere__content {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+}
+#alebex.alebex-atmosphere .wrap.alebex-atmosphere__content {
+  display: grid;
+  gap: 0;
+}
+.alebex-atmosphere__title {
+  margin: 0.25rem 0 0.35rem;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1.02;
+}
+.alebex-atmosphere--page .alebex-atmosphere__title {
+  color: #071827;
+}
+#alebex .alebex-lede {
+  color: rgba(230, 242, 252, 0.92);
+  max-width: 28ch;
+}
+.alebex-overlay-labels {
+  list-style: none;
+  margin: 1.35rem 0 1.6rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+.alebex-overlay-labels li {
+  margin: 0;
+  padding: 0.35rem 0;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: #f4faff;
+  border-bottom: 1px solid rgba(160, 220, 255, 0.35);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.alebex-overlay-labels li.is-in {
+  opacity: 1;
+  transform: none;
+}
+.alebex-atmosphere--page .alebex-overlay-labels li {
+  color: #0b1b2b;
+  border-bottom-color: rgba(11, 108, 179, 0.28);
+}
+#alebex .feature__actions .btn--ghost {
+  color: #e8f5ff;
+  border-color: rgba(180, 220, 255, 0.45);
+  background: rgba(8, 30, 52, 0.35);
+}
+.alebex-atmosphere__orb {
+  margin-top: 1.6rem;
+  max-width: 280px;
+}
+@media (max-width: 820px) {
+  .alebex-atmosphere__orb { max-width: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alebex-overlay-labels li { opacity: 1; transform: none; transition: none; }
+}
