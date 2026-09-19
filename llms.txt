@@ -1,21 +1,27 @@
 # Alexander Innovation Centre (AIC)
 
-> Alexander Innovation Centre (AIC) is a Vancouver-based applied AI platform that trains Canadian workforces, supports SME AI adoption, conducts applied research, incubates AI ventures, and develops trusted Canadian-hosted infrastructure — home of ALEBEX AI and Innovation Nights. Located at #101 – 570 Dunsmuir Street, Vancouver, BC V6B 1Y1. Contact: hello@alexic.ca.
+> Alexander Innovation Centre (AIC) is Vancouver’s AI innovation ecosystem at #101 – 570 Dunsmuir Street, Vancouver, BC V6B 1Y1. It connects founders, AI talent, researchers, companies and investors through five primary areas: Founders Lab, AI Adoption, Applied Research, Accelerator, and About. Contact: hello@alexic.ca.
+
+## Primary navigation
+- [Founders Lab](https://alexic.ca/founders-lab.html): Open founder community and startup funnel — membership, mentors/EIRs, Innovation Nights, pathway into selective acceleration.
+- [AI Adoption](https://alexic.ca/learn.html): Executive AI, corporate training, workforce upskilling, AI Readiness Review, and funding guidance for organizations in Vancouver and across Canada.
+- [Applied Research](https://alexic.ca/lab.html): Applied AI research, pilots and validation, plus AI infrastructure (including Compute Lab and ALEBEX AI).
+- [Accelerator](https://alexic.ca/accelerator.html): Structured acceleration for selected startups from Founders Lab — validation, investor readiness, and growth support.
+- [About](https://alexic.ca/about-aic.html): AIC mission, leadership and team behind the Vancouver ecosystem.
 
 ## Key pages
-- [Home](https://alexic.ca/index.html): What AIC does and where to start.
-- [AI Readiness Review](https://alexic.ca/ai-readiness.html): Free AI consultation — the flagship entry offer for Canadian SMEs.
-- [Canada's AI Strategy & Funding](https://alexic.ca/canada-ai-strategy.html): Plain-language guide to Canada's AI for All strategy and SME funding (LIFT, Compute Access Fund).
-- [For SMEs & Employers](https://alexic.ca/for-smes.html): A practical, low-risk path to AI for small and medium businesses.
-- [Divisions](https://alexic.ca/divisions.html): The four AIC divisions — Workforce Academy, Innovation Lab, Venture Studio, Compute Lab.
-- [Workforce Academy](https://alexic.ca/ai-workforce-sme-adoption.html): Corporate AI training and SME adoption.
-- [ALEBEX AI](https://alexic.ca/alebex-ai.html): AIC's flagship Canadian voice AI and agentic workflow platform, in production.
-- [Innovation Nights](https://alexic.ca/innovation-night.html): Free monthly applied-AI community events in downtown Vancouver.
-- [Team](https://alexic.ca/team.html): AIC's leadership and engineering team.
-- [Contact](https://alexic.ca/contact.html): Book a consultation, request a demo, or start a partnership.
+- [Home](https://alexic.ca/): What AIC is and how to get involved.
+- [AI Readiness Review](https://alexic.ca/ai-readiness.html): Free consultation entry point for organizations adopting AI.
+- [Corporate AI Training](https://alexic.ca/ai-workforce-sme-adoption.html): Role-based AI training for teams and SMEs.
+- [ALEBEX AI](https://alexic.ca/alebex-ai.html): AIC’s flagship Canadian voice AI and agentic workflow platform.
+- [Innovation Nights](https://alexic.ca/innovation-night.html): Community events in downtown Vancouver.
+- [Canada’s AI Strategy & Funding](https://alexic.ca/canada-ai-strategy.html): Plain-language guide to national AI strategy and SME funding context.
+- [FAQ](https://alexic.ca/faq.html): Common questions about training, programs, and events.
+- [Contact](https://alexic.ca/contact.html): Book a consultation, partnership, or demo.
 
-## Facts
-- Founded within the Alexander education group; serves all Canadian sectors (not only education).
-- ALEBEX AI is the flagship product, deployed in production with education partners.
-- Innovation Nights drew 165 founders, investors, and builders at its inaugural event (April 2026).
-- Aligned with Canada's national AI strategy "AI for All" (Government of Canada, June 4, 2026).
+## Facts (keep consistent with on-page copy)
+- Located in downtown Vancouver, BC, Canada.
+- Primary public structure: Founders Lab · AI Adoption · Applied Research · Accelerator · About.
+- Founders typically enter via Founders Lab; selected ventures may progress to the Accelerator.
+- Organizations typically start with an AI Readiness Review or AI Adoption pathways.
+- ALEBEX AI is built within the AIC ecosystem.
