@@ -26,7 +26,7 @@
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca", "logo": "https://alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
 <link rel="stylesheet" href="assets/css/refinement.css?v=20260909review" />
-<link rel="stylesheet" href="assets/css/alebex-polish.css?v=20260919f" />
+<link rel="stylesheet" href="assets/css/alebex-polish.css?v=20260919g" />
 </head>
 <body class="alebex-page" style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
 <div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -34,26 +34,40 @@
 <header class="pnav"></header>
 
 <main>
-  <section class="alebex-atmosphere alebex-atmosphere--page" id="alebex-top">
-    <div class="alebex-atmosphere__media" aria-hidden="true">
-      <img src="assets/img/alebex/atmosphere-cyan.png" alt="" width="1920" height="1080" loading="eager" decoding="async" onerror="this.src='assets/img/alebex/atmosphere-cyan.png'" />
-      <div class="alebex-atmosphere__veil alebex-atmosphere__veil--light"></div>
-    </div>
-    <div class="wrap alebex-atmosphere__content">
-      <p class="pkicker"><span class="dot"></span>Built at AIC</p>
-      <h1 class="alebex-atmosphere__title">ALEBEX AI</h1>
-      <p class="alebex-lede">Agentic voice AI for Canadian orgs — built and deployed by AIC.</p>
+  <section class="alebex-voice alebex-voice--page" id="alebex-top">
+    <div class="wrap alebex-voice__grid">
+      <div class="alebex-voice__copy">
+        <p class="pkicker"><span class="dot"></span>Built at AIC</p>
+        <h1 class="alebex-voice__title">ALEBEX AI</h1>
+        <p class="alebex-lede">A voice agent for Canadian orgs — answers, books, and hands off to people when it matters.</p>
 
-      <ul class="alebex-overlay-labels" data-alebex-motion aria-label="ALEBEX AI">
-        <li>Canada data</li>
-        <li>Multi-channel</li>
-        <li>Live demo</li>
-        <li>Built at AIC</li>
-      </ul>
-      <div class="alebex-hero-actions">
-        <a class="btn btn--primary" href="https://www.alebex.ai/#demo" target="_blank" rel="noopener">Try live demo</a>
+        <ul class="alebex-overlay-labels" data-alebex-motion aria-label="ALEBEX AI">
+          <li>Canada data</li>
+          <li>Multi-channel</li>
+          <li>Live demo</li>
+          <li>Built at AIC</li>
+        </ul>
+        <div class="alebex-hero-actions">
+          <a class="btn btn--primary" href="https://www.alebex.ai/#demo" target="_blank" rel="noopener">Try live demo</a>
+        </div>
+        <p class="alebex-quiet">PIPEDA / CASL · <a href="https://www.alebex.ai/resources-brighton-college" target="_blank" rel="noopener">Brighton College case</a></p>
       </div>
-      <p class="alebex-quiet">PIPEDA / CASL · <a href="https://www.alebex.ai/resources-brighton-college" target="_blank" rel="noopener">Brighton College case</a></p>
+
+      <aside class="alebex-voice-stage" aria-label="ALEBEX live voice demo preview">
+        <div class="alebex-voice-stage__chrome">
+          <span class="alebex-voice-stage__live"><i></i> Live call</span>
+          <span class="alebex-voice-stage__meta">Agent · inbound</span>
+        </div>
+        <div class="alebex-voice-stage__wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <ol class="alebex-voice-stage__transcript">
+          <li class="is-agent"><span>Alebex</span><p>Hi — thanks for calling. How can I help today?</p></li>
+          <li class="is-user"><span>Caller</span><p>I missed a call about booking an appointment.</p></li>
+          <li class="is-agent"><span>Alebex</span><p>I can book that now. Does Thursday at 2:00 PM work?</p></li>
+        </ol>
+        <div class="alebex-voice-stage__status">Listening · human escalation ready</div>
+      </aside>
     </div>
   </section>
 
@@ -76,6 +90,6 @@
 <script src="assets/js/nav.js?v=20260915-production-nav"></script>
 <script src="assets/js/footer.js?v=20260909a"></script>
 <script type="module" src="assets/js/alebex-orb.js?v=20260619q"></script>
-<script src="assets/js/alebex-motion.js?v=20260919f" defer></script>
+<script src="assets/js/alebex-motion.js?v=20260919g" defer></script>
 </body>
 </html>
