@@ -861,3 +861,18 @@ body.alebex-page .alebex-feature-card:hover {
 @media (max-width: 860px) {
   .alebex-split-orb__row--page { grid-template-columns: 1fr; }
 }
+
+
+/* Ensure home #alebex primary CTA stays visible */
+#alebex.alebex-split-orb .feature__actions {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  visibility: visible;
+  opacity: 1;
+}
+#alebex.alebex-split-orb .feature__actions .btn--primary {
+  display: inline-flex !important;
+  min-height: 48px;
+}
