@@ -229,3 +229,52 @@ body.core-about .pagehead .plead {
     padding-top: 22px;
   }
 }
+
+/* ---------- Alebex highlight strip (home + page) ---------- */
+.alebex-highlights {
+  list-style: none;
+  margin: 1.1rem 0 1.35rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 0.55rem;
+}
+.alebex-highlights li {
+  margin: 0;
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(122, 191, 255, 0.28);
+  background: rgba(8, 32, 56, 0.55);
+  color: #d7ecfb;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+.alebex-highlights li strong {
+  display: block;
+  color: #7fd4ff;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+}
+#alebex .alebex-highlights li {
+  background: rgba(10, 36, 62, 0.65);
+}
+body.alebex-page .alebex-highlights--page li {
+  border-color: rgba(30, 143, 232, 0.28);
+  background: rgba(30, 143, 232, 0.08);
+  color: var(--ink, #0b1b2b);
+}
+body.alebex-page .alebex-highlights--page li strong {
+  color: #0b6cb3;
+}
+body.alebex-page .alebex-proof {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted, #5a6b7d);
+}
+body.alebex-page .alebex-proof a {
+  color: #0b6cb3;
+  font-weight: 600;
+}
