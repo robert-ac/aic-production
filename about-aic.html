@@ -14,12 +14,13 @@
 <meta property="og:url" content="https://alexic.ca/about-aic.html" />
 <meta property="og:image" content="https://alexic.ca/assets/img/video-poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260619q" />
+<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260921-mobile-accordion" />
 <link rel="stylesheet" href="assets/css/page.css?v=20260619q" />
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca", "logo": "https://alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
-<link rel="stylesheet" href="assets/css/refinement.css?v=20260909review" />
+<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-nav-indicator" />
+<link rel="stylesheet" href="assets/css/arch.css?v=20260921-arch1" />
 <style>
 /* Four leadership profiles, with comfortable card widths on smaller screens. */
 .teamgrid--lead{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -28,20 +29,29 @@
 @media(max-width:560px){.teamgrid--lead{grid-template-columns:1fr}.teamgrid--lead .tcard__role{min-height:0}}
 </style>
 </head>
-<body style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
+<body class="arch" style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
 
 <div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <header class="pnav"></header> 
 
 <main>
-  <section class="psection wrap pagehead">
-    <p class="pkicker"><span class="dot"></span>Our Team</p>
-    <h1>The people building Vancouver's future.</h1>
-    <p class="plead">Alexander Innovation Centre is led by practitioners who've built companies, shipped products, and understand what it takes to turn ideas into outcomes.</p>
+  <!-- Opening. The organisation page is anchored by the actual building, not
+       an abstract render: this page is about the people and the place. -->
+  <section class="arch-open" id="top">
+    <img class="arch-open__bg" src="assets/img/aic-building.webp" alt=""
+         width="1920" height="1272" fetchpriority="high" decoding="async">
+    <div class="arch-open__inner">
+      <p class="arch-crumb">About AIC &middot; 570 Dunsmuir Street, Vancouver</p>
+      <h1>The people building Vancouver&rsquo;s future.</h1>
+      <p class="arch-lead">Alexander Innovation Centre is led by practitioners who&rsquo;ve built companies, shipped products, and understand what it takes to turn ideas into outcomes.</p>
+      <nav class="arch-jump" aria-label="On this page" style="margin-top:clamp(1.8rem,4vh,2.6rem)">
+        <a href="#mission">Mission</a><a href="#leadership">Leadership</a><a href="#team">Team</a><a href="#why">Why AIC</a>
+      </nav>
+    </div>
   </section>
-
-  <section class="psection wrap" style="padding-top:clamp(1.5rem,3vh,2.5rem);">
+  <section class="arch-band arch-band--paper" id="mission">
+    <div class="arch-band__inner">
     <span class="overline">Mission &amp; Vision</span>
     <h2>Build your future with a connected AI community</h2>
     <p class="plead">The purpose guiding Alexander Innovation Centre, and the future we're building toward.</p>
@@ -61,9 +71,10 @@
         <p>To make Alexander Innovation Centre a leading applied AI platform in British Columbia, connecting workforce training, business adoption, applied research, venture incubation, and trusted AI infrastructure to strengthen Canada's responsible AI ecosystem.</p>
       </div>
     </div>
+  </div>
   </section>
-
-  <section class="psection wrap" style="padding-top:clamp(1.5rem,3vh,2.5rem);">
+  <section class="arch-band arch-band--white" id="leadership">
+    <div class="arch-band__inner">
     <span class="overline">Leadership</span>
     <h2>Meet our leadership team.</h2>
     <p class="plead">Experienced professionals driving Vancouver's innovation ecosystem.</p>
@@ -105,9 +116,10 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--paper" id="team">
+    <div class="arch-band__inner">
     <span class="overline">Engineering &amp; Operations</span>
     <h2>Work with people who build practical AI.</h2>
     <p class="plead">The people building Alexander Innovation Centre's products, powering our applied AI and innovation initiatives.</p>
@@ -167,10 +179,10 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
-
-  <section class="psection psection--why">
-    <div class="wrap">
+  <section class="arch-band arch-band--navy" id="why">
+    <div class="arch-band__inner">
       <div class="whyexist">
       <div class="whyexist__text">
         <span class="overline overline--why">Why we exist</span>
@@ -223,9 +235,8 @@
     </div>
     </div>
   </section>
-
-  <section class="psection psection--advisory">
-    <div class="wrap">
+  <section class="arch-band arch-band--white" id="advisory">
+    <div class="arch-band__inner">
     <span class="overline">Guidance &amp; Stewardship</span>
     <h2>Advisory Board.</h2>
     <p class="plead">Seven seats representing the expertise needed to guide Alexander Innovation Centre's mission and growth.</p>
@@ -240,7 +251,7 @@
       <a class="seat seat--cta" href="contact.html">
         <span class="seat__ctatag">Get involved</span>
         <p>Interested in an advisory seat? We'd love to talk.</p>
-        <span class="seat__go">Get in touch →</span>
+        <span class="seat__go">Get in touch</span>
       </a>
     </div>
     </div>
@@ -248,7 +259,7 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="assets/js/nav.js?v=20260915-production-nav"></script>
+<script src="assets/js/nav.js?v=20260921-dropdown-hover"></script>
 <script src="assets/js/footer.js?v=20260909a"></script>
 </body>
 </html>

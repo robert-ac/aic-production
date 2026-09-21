@@ -1,0 +1,349 @@
+/* ===========================================================================
+   AIC — "Architectural" subpage system              (pilot: body.arch pages)
+   ---------------------------------------------------------------------------
+   The subpages had drifted into a generic card kit: 165 .pcard instances all
+   sharing one radius, one gradient wash and one border, so a section's main
+   argument and a footnote looked identical, while the homepage next door was
+   navy, architectural and photographic. That discontinuity — not the light
+   palette — is what made the subpages read as cheaper.
+
+   This sheet replaces the card kit on the pilot pages with full-bleed FIELDS.
+   The edge of a band is the structure, so nothing needs a box to be separated
+   from its neighbour. Rules that hold:
+
+     1. Photography is structure, not decoration. The brand renders are already
+        navy, so an image field and a navy field are the same material.
+     2. One bold moment per page (the opening). Everything after is quiet.
+     3. A container must earn itself. Cards survive only for real objects —
+        people, events, ventures — never for categories or prose.
+     4. Dark fields carry DENSE content (steps, specs, data). Light fields
+        carry OPEN prose. The contrast between them is the main device.
+     5. --accent is structural: a band edge, a step marker, a rule. Never a
+        tiny tracked-out coloured cap above a heading.
+
+   Loaded last, and scoped to body.arch, so the other subpages are untouched.
+   =========================================================================== */
+
+body.arch {
+  --field-navy:   #07182F;   /* structural dark field — deeper than the header
+                                so a band reads as material, not as more chrome */
+  --field-navy-2: #0C2746;   /* nested surface on dark */
+  --field-line:   #1E3A5C;   /* hairline on dark */
+  --paper:        #F2F5F9;
+  --ink:          #0E2038;
+  --ink-2:        #47607C;
+  --on-dark:      #EAF2FB;
+  --on-dark-2:    #9FB8D2;
+  --measure:      68ch;
+  --gutter:       clamp(1.25rem, 5vw, 4rem);
+  --inner:        1180px;
+  background: var(--paper);
+}
+body.arch main { overflow: clip; }
+
+/* The old chrome has no place here. */
+body.arch .bg-fx { display: none; }
+
+/* ---------- field primitives ---------------------------------------------- */
+.arch-band { position: relative; padding-block: clamp(3.5rem, 8vw, 7rem); }
+.arch-band__inner {
+  width: min(var(--inner), calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+}
+.arch-band--paper { background: var(--paper); color: var(--ink); }
+.arch-band--white { background: #fff; color: var(--ink); }
+.arch-band--navy  { background: var(--field-navy); color: var(--on-dark); }
+/* the accent shows up as a structural edge on the dark fields, per pillar */
+.arch-band--navy::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: var(--accent, #1E8FE8);
+}
+
+/* ---------- page opening: display type on the brand render ---------------- */
+.arch-open {
+  position: relative; isolation: isolate;
+  background: var(--field-navy); color: var(--on-dark);
+  padding: calc(72px + clamp(4rem, 11vh, 8rem)) 0 clamp(3rem, 7vh, 5.5rem);
+  overflow: hidden;
+}
+.arch-open__bg {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover; object-position: center right;
+}
+/* the renders are navy already, so this only deepens the reading side */
+.arch-open::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--field-navy) 0%, rgba(7,24,47,0.92) 34%,
+                    rgba(7,24,47,0.55) 62%, rgba(7,24,47,0.30) 100%),
+    linear-gradient(180deg, rgba(7,24,47,0.86) 0%, rgba(7,24,47,0.25) 34%,
+                    rgba(7,24,47,0.20) 70%, rgba(7,24,47,0.75) 100%);
+}
+.arch-open__inner {
+  width: min(var(--inner), calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+}
+.arch-open h1 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.75rem, 6vw, 5rem); line-height: 1.02;
+  letter-spacing: -0.04em; color: #fff; margin: 0; max-width: 16ch;
+  text-wrap: balance;
+}
+.arch-open .arch-lead {
+  margin: clamp(1.1rem, 2.4vh, 1.7rem) 0 0;
+  font-size: clamp(1.06rem, 1.5vw, 1.22rem); line-height: 1.62;
+  color: var(--on-dark); max-width: 54ch;
+}
+/* a real breadcrumb earns its place; the decorative eyebrows do not */
+.arch-crumb {
+  display: flex; align-items: center; gap: 0.65rem;
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--on-dark-2); margin: 0 0 clamp(1rem, 2.5vh, 1.6rem);
+}
+.arch-crumb::before {
+  content: ""; width: 26px; height: 2px; background: var(--accent, #1E8FE8);
+  flex: 0 0 auto; border-radius: 2px;
+}
+.arch-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: clamp(1.5rem, 3.5vh, 2.3rem); }
+/* the header CTA wraps to three lines in a narrow grid cell elsewhere on the
+   site; give every action here room to stay on one line */
+.arch-actions .btn { white-space: nowrap; }
+.arch-open .btn--ghost { color: #fff; border-color: rgba(190,220,255,0.45); background: rgba(255,255,255,0.05); }
+.arch-open .btn--ghost:hover { background: rgba(255,255,255,0.13); border-color: rgba(190,220,255,0.7); }
+
+/* ---------- on-page jump strip -------------------------------------------- */
+.arch-jump {
+  position: relative; z-index: 1;
+  width: min(var(--inner), calc(100% - var(--gutter) * 2));
+  margin: clamp(2rem, 5vh, 3.2rem) auto 0;
+  display: flex; flex-wrap: wrap; gap: 0 clamp(1.4rem, 3vw, 2.6rem);
+  border-top: 1px solid rgba(160,195,230,0.24); padding-top: 0.9rem;
+}
+.arch-jump a {
+  font-size: 0.875rem; color: var(--on-dark-2); text-decoration: none;
+  padding: 0.55rem 0; min-height: 44px; display: inline-flex; align-items: center;
+  border-bottom: 2px solid transparent;
+}
+.arch-jump a:hover, .arch-jump a:focus-visible { color: #fff; border-bottom-color: var(--accent, #1E8FE8); }
+
+/* ---------- section openings ---------------------------------------------- */
+/* NOTE: the measure lives on the heading, not on this wrapper. `ch` resolves
+   against the element's OWN font-size, so a max-width in ch on the wrapper
+   (which inherits 1rem) came out at ~264px and wrapped every h2 into a tall
+   narrow column. */
+.arch-head { max-width: none; }
+.arch-head h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem); line-height: 1.12;
+  letter-spacing: -0.035em; margin: 0; max-width: 20ch; text-wrap: balance;
+}
+.arch-band--navy .arch-head h2 { color: #fff; }
+.arch-head p {
+  margin: 0.9rem 0 0; font-size: 1.0625rem; line-height: 1.7;
+  color: var(--ink-2); max-width: var(--measure);
+}
+.arch-band--navy .arch-head p { color: var(--on-dark-2); }
+.arch-head + * { margin-top: clamp(2.2rem, 5vw, 3.4rem); }
+
+/* ---------- asymmetric split ---------------------------------------------- */
+.arch-split { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
+.arch-split--flip { grid-template-columns: 5fr 7fr; }
+/* a tall portrait figure beside a short copy column leaves a hole; centre it
+   and cap its height so the band keeps a sane proportion */
+.arch-split--tall { align-items: center; }
+.arch-split__fig { margin: 0; }
+.arch-split__fig img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.arch-split--tall .arch-split__fig img { max-height: 560px; width: auto; max-width: 100%; margin-inline: auto; }
+.arch-split--tall .arch-split__fig figcaption { text-align: center; }
+.arch-split__fig figcaption { margin-top: 0.8rem; font-size: 0.82rem; color: var(--on-dark-2); }
+.arch-band--paper .arch-split__fig figcaption { color: var(--ink-2); }
+
+/* ---------- numbered pathway steps (dense, on the dark field) ------------- */
+.arch-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.arch-steps li {
+  display: grid; grid-template-columns: 3.4rem 1fr; gap: 0 1.2rem;
+  padding: 1.15rem 0; border-top: 1px solid var(--field-line);
+}
+.arch-steps li:last-child { border-bottom: 1px solid var(--field-line); }
+.arch-steps__n {
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--accent, #1E8FE8); padding-top: 0.28rem;
+}
+.arch-steps h3 {
+  margin: 0; font-family: var(--font-display); font-weight: 600;
+  font-size: 1.14rem; line-height: 1.3; color: #fff; letter-spacing: -0.01em;
+}
+.arch-steps p { margin: 0.32rem 0 0; font-size: 0.925rem; line-height: 1.6; color: var(--on-dark-2); }
+
+/* ---------- specification row (real data only) ---------------------------- */
+.arch-spec {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0; border-top: 1px solid var(--field-line); border-bottom: 1px solid var(--field-line);
+}
+.arch-spec > div { padding: 1.15rem 1.3rem 1.25rem 0; }
+.arch-spec dt {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--on-dark-2); margin: 0 0 0.5rem;
+}
+.arch-spec dd {
+  margin: 0; font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1.1; color: #fff;
+  letter-spacing: -0.02em;
+}
+.arch-spec dd small { display: block; margin-top: 0.4rem; font: 400 0.85rem/1.5 var(--font-body); color: var(--on-dark-2); letter-spacing: 0; }
+
+/* ---------- editorial list (replaces the category card grid) -------------- */
+.arch-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2.5rem, 5vw, 4.5rem); }
+.arch-list > * {
+  padding: clamp(1.6rem, 3vw, 2.2rem) 0;
+  border-top: 1px solid #D3DEEA;
+}
+.arch-list h3 {
+  margin: 0 0 0.6rem; font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.22rem, 1.9vw, 1.5rem); line-height: 1.25;
+  letter-spacing: -0.02em; color: var(--ink); max-width: 22ch;
+}
+.arch-list p { margin: 0; font-size: 1rem; line-height: 1.68; color: var(--ink-2); max-width: 46ch; }
+.arch-band--navy .arch-list > * { border-top-color: var(--field-line); }
+.arch-band--navy .arch-list h3 { color: #fff; }
+.arch-band--navy .arch-list p { color: var(--on-dark-2); }
+
+/* ---------- prose ---------------------------------------------------------- */
+.arch-prose { max-width: var(--measure); }
+.arch-prose p { font-size: 1.0625rem; line-height: 1.75; color: var(--ink-2); margin: 0 0 1.15rem; }
+.arch-prose p:last-child { margin-bottom: 0; }
+.arch-band--navy .arch-prose p { color: var(--on-dark); }
+.arch-note { font-size: 0.9rem; line-height: 1.65; color: var(--on-dark-2); max-width: 62ch; margin: clamp(1.6rem,3vw,2.2rem) 0 0; }
+.arch-band--paper .arch-note, .arch-band--white .arch-note { color: var(--ink-2); }
+
+/* ---------- closing action band ------------------------------------------- */
+.arch-cta { background: var(--field-navy-2); color: var(--on-dark); }
+.arch-cta .arch-head h2 { color: #fff; max-width: 20ch; }
+.arch-cta .btn--ghost { color: #fff; border-color: rgba(190,220,255,0.45); background: transparent; }
+.arch-cta .btn--ghost:hover { background: rgba(255,255,255,0.12); }
+
+/* ---------- responsive ----------------------------------------------------- */
+@media (max-width: 900px) {
+  .arch-split, .arch-split--flip { grid-template-columns: 1fr; gap: 2.2rem; }
+  .arch-list { grid-template-columns: 1fr; }
+  .arch-open__bg { object-position: 70% center; }
+  .arch-open::after {
+    background:
+      linear-gradient(180deg, rgba(7,24,47,0.90) 0%, rgba(7,24,47,0.72) 45%, rgba(7,24,47,0.92) 100%);
+  }
+  .arch-actions .btn { white-space: normal; }
+}
+@media (max-width: 560px) {
+  .arch-steps li { grid-template-columns: 2.6rem 1fr; }
+  .arch-spec > div { padding-right: 0; }
+  .arch-actions { flex-direction: column; align-items: stretch; }
+  .arch-actions .btn { width: 100%; }
+}
+
+/* Movement is suppressed globally by refinement.css under reduced motion;
+   nothing here animates on load, only on hover. */
+
+/* ===========================================================================
+   Band-aware typography for sections that keep their existing inner markup.
+   These pages still use .overline / .plead / .featgrid / .vsgrid inside a
+   band, so the band has to set the register rather than each component.
+   =========================================================================== */
+.arch-band > .arch-band__inner > h2,
+.arch-band .psplit h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem); line-height: 1.12;
+  letter-spacing: -0.035em; margin: 0; max-width: 22ch; text-wrap: balance;
+}
+/* Colouring one word of a headline is the commonest generated-page tell and
+   it fights the display setting. Keep the markup, drop the highlight. */
+.arch-band h1 .accent, .arch-band h2 .accent, .arch-open h1 .accent { color: inherit; }
+
+/* Section markers: same device as the page crumb, so a label reads as
+   structure instead of a tracked-out cap shouting above every heading. */
+.arch-band .overline, .arch-band .pkicker {
+  display: flex; align-items: center; gap: 0.65rem;
+  font-family: var(--font-mono); font-size: 0.7rem !important; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  margin: 0 0 clamp(0.9rem, 2vh, 1.3rem); color: var(--ink-2);
+}
+.arch-band .overline::before, .arch-band .pkicker::before {
+  content: ""; width: 26px; height: 2px; flex: 0 0 auto; border-radius: 2px;
+  background: var(--accent, #1E8FE8); display: block !important;
+}
+.arch-band .overline .dot, .arch-band .pkicker .dot { display: none; }
+.arch-band--navy .overline, .arch-band--navy .pkicker { color: var(--on-dark-2); }
+
+.arch-band .plead, .arch-band > .arch-band__inner > p {
+  font-size: 1.0625rem; line-height: 1.72; color: var(--ink-2);
+  max-width: var(--measure); margin: 1rem 0 0;
+}
+.arch-band--navy .plead, .arch-band--navy > .arch-band__inner > p { color: var(--on-dark); }
+.arch-band--navy h2, .arch-band--navy h3 { color: #fff; }
+.arch-band--navy li, .arch-band--navy dd, .arch-band--navy dt { color: var(--on-dark); }
+
+/* objects keep their surface, but on a dark field they take a dark one */
+.arch-band--navy .pcard, .arch-band--navy .pcard--solid {
+  background: var(--field-navy-2) !important; border-color: var(--field-line) !important;
+  box-shadow: none;
+}
+.arch-band--navy .featgrid li {
+  background: var(--field-navy-2); border-color: var(--field-line);
+}
+.arch-band--navy .featgrid__ico { background: rgba(124,201,255,0.12); color: #7CC9FF; border-color: transparent; }
+
+/* ---------- the latency chart, promoted to the instrument it is ----------- */
+.arch-band--navy .latbars {
+  background: transparent; border: 0; box-shadow: none;
+  padding: 0; margin-top: clamp(2rem, 4vw, 3rem); gap: 0;
+}
+.arch-band--navy .latrow {
+  grid-template-columns: clamp(160px, 24%, 240px) 1fr auto;
+  padding: 1.35rem 0; border-top: 1px solid var(--field-line); align-items: center;
+}
+.arch-band--navy .latrow:last-child { border-bottom: 1px solid var(--field-line); }
+.arch-band--navy .latrow__label { color: #fff; font-size: 0.95rem; align-self: center; }
+.arch-band--navy .latrow__track { background: rgba(160,195,230,0.16); height: 10px; }
+.arch-band--navy .latrow__val { color: #fff; font-size: 0.85rem; }
+.arch-band--navy .latrow__val em { color: var(--on-dark-2); }
+/* the explanation that used to live in a duplicate stat card below the chart */
+.latrow__note {
+  grid-column: 2 / -1; margin: 0.45rem 0 0;
+  font-size: 0.875rem; line-height: 1.55; color: var(--on-dark-2); max-width: 62ch;
+}
+.arch-band--navy .latrow__dot--good { background: #4ADE80; }
+.arch-band--navy .latrow__dot--bad { background: #FF7A85; }
+.arch-band--navy .latrow__dot--accent { background: #7CC9FF; }
+.arch-band--navy .latrow__bar--accent { background: linear-gradient(90deg, #7CC9FF, #2F9BE8); }
+@media (max-width: 640px) {
+  .arch-band--navy .latrow { grid-template-columns: 1fr; gap: 0.35rem; }
+  .latrow__note { grid-column: 1 / -1; }
+}
+
+/* ---------- the orb keeps its stage, but on the dark field it belongs to -- */
+.arch-band--navy .orb3d__tag { background: rgba(7,24,47,0.9); }
+
+/* ===========================================================================
+   Dark-field text, applied to every descendant rather than direct children.
+   Sections that keep their original inner markup (.whyexist, .arch-cta) carry
+   colours tuned for the light page they used to sit on — on a navy field those
+   measured 2.3:1 and 2.9:1. The field owns the register, so set it here once.
+   =========================================================================== */
+.arch-band--navy p, .arch-cta p,
+.arch-band--navy li, .arch-cta li { color: var(--on-dark); }
+.arch-band--navy .arch-head p, .arch-cta .arch-head p,
+.arch-band--navy .arch-note, .arch-cta .arch-note,
+.arch-band--navy figcaption, .arch-cta figcaption { color: var(--on-dark-2); }
+.arch-band--navy h1, .arch-band--navy h2, .arch-band--navy h3,
+.arch-cta h1, .arch-cta h2, .arch-cta h3,
+.arch-band--navy strong, .arch-cta strong { color: #fff; }
+.arch-band--navy .overline, .arch-cta .overline,
+.arch-band--navy .pkicker, .arch-cta .pkicker { color: var(--on-dark-2); }
+.arch-cta::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: var(--accent, #1E8FE8);
+}
+/* the "why we exist" statement had three paragraphs stepping down in opacity;
+   on the darker field the last two dropped out of legibility */
+.arch-band--navy .whyexist p { color: var(--on-dark); }
+.arch-band--navy .whyexist__bridge { color: #fff; }

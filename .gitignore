@@ -22,3 +22,11 @@ archive/
 .env.local
 # local QA screenshots (not shipped)
 docs/screens/
+
+# Test dependencies (see tests/README.md) - the site itself stays dependency-free
+tests/node_modules/
+tests/package-lock.json
+
+# Supabase local runtime state and function secrets
+supabase/.temp/
+supabase/functions/.env

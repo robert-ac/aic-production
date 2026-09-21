@@ -1,0 +1,4 @@
+project_id = "aic-website"
+
+[functions.enrich-lead]
+verify_jwt = true

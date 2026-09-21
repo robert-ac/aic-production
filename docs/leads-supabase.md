@@ -1,5 +1,8 @@
 # Lead capture → Supabase (setup, ~5 min)
 
+For automatic company/contact research after capture, continue with
+[`lead-sales-research.md`](lead-sales-research.md).
+
 The contact form (`contact.html`) and the Free Enterprise AI Adoption Consultation
 form (`ai-readiness.html`) both submit through `assets/js/leads.js`, which inserts
 each submission as a row in a Supabase table called `leads`. You read the leads in
@@ -24,6 +27,7 @@ create table if not exists public.leads (
   job_title     text,
   email         text,
   phone         text,
+  company_website text,
   inquiry_type  text,
   company_size  text,
   message       text,
@@ -60,7 +64,7 @@ Bump the cache version on the `leads.js` `<script>` tags (or hard-refresh) and y
 
 ## 5. View your leads
 Supabase → **Table Editor → leads**. Every submission appears as a row
-(name, organization, job title, email, phone, inquiry type, company size, message,
+(name, organization, job title, email, phone, company website, inquiry type, company size, message,
 source page, timestamp). You can sort, filter, and **Export to CSV** from there.
 
 ## Notes

@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://alexic.ca/ai-readiness.html" />
 <meta property="og:image" content="https://alexic.ca/assets/img/video-poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260619q" />
+<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260921-mobile-accordion" />
 <link rel="stylesheet" href="assets/css/page.css?v=20260619q" />
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does the AI Readiness Review cost?", "acceptedAnswer": {"@type": "Answer", "text": "The initial consultation is free. The AI Readiness Diagnostic is a paid engagement scoped to your organisation's size; pricing is confirmed before any work begins."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "The initial consultation takes about an hour. The AI Readiness Diagnostic for a typical SME is completed within two to three weeks."}}, {"@type": "Question", "name": "Do we have to buy anything afterward?", "acceptedAnswer": {"@type": "Answer", "text": "No. You leave with a report and a recommended next step that is yours to keep, even if that step isn't with AIC."}}]}
@@ -22,7 +22,7 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca", "logo": "https://alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
-<link rel="stylesheet" href="assets/css/refinement.css?v=20260909review" />
+<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-nav-indicator" />
 </head>
 <body class="service-page" style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.12);">
 <div class="bg-fx bg-fx--soft" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -112,7 +112,10 @@
             <div><label>Job title</label><input name="jobtitle" autocomplete="organization-title" /></div>
             <div><label>Phone (optional)</label><input name="phone" autocomplete="tel" /></div>
           </div>
-          <div><label>Email</label><input required type="email" name="email" autocomplete="email" /></div>
+          <div class="row2">
+            <div><label>Email</label><input required type="email" name="email" autocomplete="email" /></div>
+            <div><label>Company website (optional)</label><input type="url" name="website" autocomplete="url" inputmode="url" placeholder="https://example.com" /></div>
+          </div>
           <div class="row2">
             <div><label>Inquiry type</label>
               <select name="inquiry">
@@ -180,8 +183,8 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Service", "name": "AI Readiness Diagnostic", "serviceType": "AI readiness assessment", "provider": {"@type": "Organization", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca"}, "areaServed": {"@type": "Country", "name": "Canada"}, "description": "A structured diagnostic of your workflows, data, skills, and governance for Canadian SMEs, producing a prioritised AI opportunity report and a funding pathway map. Starts with a free consultation.", "offers": {"@type": "Offer", "priceCurrency": "CAD", "price": "0", "description": "Free initial consultation; the AI Readiness Diagnostic is a paid engagement scoped to organisation size."}}
 </script>
-<script src="assets/js/leads.js?v=20260619q"></script>
-<script src="assets/js/nav.js?v=20260915-production-nav"></script>
+<script src="assets/js/leads.js?v=20260921-sales-research"></script>
+<script src="assets/js/nav.js?v=20260921-dropdown-hover"></script>
 <script src="assets/js/footer.js?v=20260909a"></script>
 </body>
 </html>

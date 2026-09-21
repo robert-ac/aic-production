@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://alexic.ca/alebex-ai.html" />
 <meta property="og:image" content="https://alexic.ca/assets/img/video-poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260619q" />
+<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260921-mobile-accordion" />
 <link rel="stylesheet" href="assets/css/page.css?v=20260619q" />
 <script type="importmap">
 { "imports": {
@@ -25,24 +25,34 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca", "logo": "https://alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
-<link rel="stylesheet" href="assets/css/refinement.css?v=20260909review" />
+<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-nav-indicator" />
+<link rel="stylesheet" href="assets/css/arch.css?v=20260921-arch1" />
 </head>
-<body style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
+<body class="arch" style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
 <div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <header class="pnav"></header>
 
 <main>
-    <section class="psection wrap pagehead">
-    <p class="pkicker"><span class="dot"></span>Automate Work · Powered by ALEBEX AI</p>
-    <h1>Stop losing time to calls, follow-ups, and repetitive admin.</h1>
-    <p class="plead">ALEBEX AI helps businesses handle routine calls, reminders, bookings, follow-ups, intake, and customer communication, so your team can focus on higher-value work while customers still get fast, consistent service.</p>
+  <!-- Opening. lab-1440 is an exploded layer stack — it literally depicts the
+       dual-model architecture this page argues for, so the image is doing work,
+       not decorating. It also replaces the separate full-width banner that used
+       to sit under the old page head. -->
+  <section class="arch-open" id="top">
+    <img class="arch-open__bg" src="assets/img/brand/lab-1440.webp" alt=""
+         width="1440" height="960" fetchpriority="high" decoding="async">
+    <div class="arch-open__inner">
+      <p class="arch-crumb">Automate work &middot; Powered by ALEBEX AI</p>
+      <h1>Stop losing time to calls, follow-ups, and repetitive admin.</h1>
+      <p class="arch-lead">ALEBEX AI helps businesses handle routine calls, reminders, bookings, follow-ups, intake, and customer communication, so your team can focus on higher-value work while customers still get fast, consistent service.</p>
+      <div class="arch-actions">
+        <a class="btn btn--primary" href="https://alebex.ai/#demo" target="_blank" rel="noopener">Book a demo</a>
+        <a class="btn btn--ghost" href="contact.html?type=alebex">Talk to AIC</a>
+      </div>
+    </div>
   </section>
-  <section class="wrap pagebanner-wrap">
-    <figure class="pagebanner"><img src="assets/img/technology.webp" alt="ALEBEX AI, Canadian agentic workflow and voice-AI platform" loading="lazy" width="1920" height="1081"></figure>
-  </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--paper">
+    <div class="arch-band__inner">
     <div class="psplit">
       <div>
         <span class="overline">What ALEBEX AI does</span>
@@ -83,9 +93,10 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--navy" id="latency">
+    <div class="arch-band__inner">
     <span class="overline">Why voice AI is hard</span>
     <h2>Voice only works when it feels <span class="accent">human-speed</span>.</h2>
     <p class="plead">In conversation, awkward silence is product failure, latency breaks trust, causes interruptions, and makes AI feel robotic. ALEBEX AI runs a dual-model architecture with a single voice: a small language model starts speaking early while a larger model completes the full response.</p>
@@ -94,26 +105,27 @@
         <span class="latrow__label"><span class="latrow__dot latrow__dot--good"></span> Human benchmark</span>
         <span class="latrow__track"><span class="latrow__bar latrow__bar--good" style="width:12%"></span></span>
         <span class="latrow__val">~200ms <em>natural</em></span>
+        <p class="latrow__note">The natural conversational gap between turns.</p>
       </div>
       <div class="latrow">
         <span class="latrow__label"><span class="latrow__dot latrow__dot--bad"></span> Typical voice AI (single LLM)</span>
         <span class="latrow__track"><span class="latrow__bar latrow__bar--bad" style="width:88%"></span></span>
         <span class="latrow__val">~1,500ms <em>feels robotic</em></span>
+        <p class="latrow__note">Speaks only after the full answer generates, so it feels delayed and robotic.</p>
       </div>
       <div class="latrow">
         <span class="latrow__label"><span class="latrow__dot latrow__dot--accent"></span> ALEBEX AI (SLM + LLM)</span>
         <span class="latrow__track"><span class="latrow__bar latrow__bar--accent" style="width:24%"></span></span>
         <span class="latrow__val">~400ms to first voice <em>responsive</em></span>
+        <p class="latrow__note">Small model speaks early, large model completes. Responsive, not robotic.</p>
       </div>
     </div>
-    <div class="pgrid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1.5rem;">
-      <div class="pcard"><span class="num">Human benchmark</span><h3 class="statbig statbig--good">~200ms</h3><p>The natural conversational gap between turns.</p></div>
-      <div class="pcard"><span class="num">Typical voice agent</span><h3 class="statbig statbig--bad">~1,500ms</h3><p>Speaks only after the full answer generates, feels delayed and robotic.</p></div>
-      <div class="pcard"><span class="num">ALEBEX AI by design</span><h3 class="statbig">Human-speed</h3><p>Small model speaks early, large model completes, responsive, not robotic.</p></div>
+    <!-- the three stat cards that used to sit here repeated the exact figures
+           already plotted above; their explanations now live on the rows. -->
     </div>
   </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--white">
+    <div class="arch-band__inner">
     <span class="overline">Technical safety</span>
     <h2>Explicit anti-hallucination, <span class="accent">fast enough for real-time voice</span>.</h2>
     <p class="plead">Traditional reflection architectures can take about 600ms per round trip. ALEBEX AI uses a lightweight SLM to validate information in roughly 20ms before it reaches the caller, maintaining accuracy while preserving a smooth, natural conversation.</p>
@@ -141,9 +153,10 @@
       </div>
     </div>
     <div class="proofbar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> Every response is checked before delivery, improving reliability without sacrificing speed.</div>
+  </div>
   </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--paper">
+    <div class="arch-band__inner">
     <span class="overline">Responsible deployment</span>
     <h2>Designed to augment staff, not replace accountability.</h2>
     <p class="plead">Every ALEBEX AI implementation includes governance safeguards:</p>
@@ -169,15 +182,17 @@
         <span class="t">Monitoring, audit, and ongoing optimization</span>
       </li>
     </ul>
+  </div>
   </section>
-
-  <section class="psection wrap">
+  <section class="arch-band arch-band--white">
+    <div class="arch-band__inner">
     <span class="overline">Built for two markets</span>
     <h2>ALEBEX AI for education and for SMEs.</h2>
     <div class="pgrid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
       <div class="pcard"><h3>ALEBEX AI for Education</h3><p>Admissions triage, application checklists, appointment booking, payment reminders, FAQ routing, after-hours and multilingual support, with human escalation for sensitive cases.</p></div>
       <div class="pcard"><h3>ALEBEX AI for SMEs</h3><p>Customer service, sales follow-up, appointment booking, and administrative communication for high-volume service businesses.</p></div>
     </div>
+  </div>
   </section>
 </main>
 
@@ -186,7 +201,7 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "ALEBEX AI", "applicationCategory": "BusinessApplication", "operatingSystem": "Cloud", "provider": {"@type": "Organization", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca"}, "description": "Canadian agentic-workflow and voice-AI platform that automates calls, follow-ups, bookings, intake, and routing, with human escalation built in.", "featureList": ["Voice AI and call handling", "Missed-call recovery and follow-up", "Appointment booking and reminders", "Customer intake and routing", "Workflow escalation to human staff"], "offers": {"@type": "Offer", "priceCurrency": "CAD", "price": "0", "description": "Book a free ALEBEX AI demo; pricing is custom per deployment."}}
 </script>
-<script src="assets/js/nav.js?v=20260915-production-nav"></script>
+<script src="assets/js/nav.js?v=20260921-dropdown-hover"></script>
 <script src="assets/js/footer.js?v=20260909a"></script>
 <script type="module" src="assets/js/alebex-orb.js?v=20260619q"></script>
 </body>

@@ -12,7 +12,7 @@
   "use strict";
 
   /* ----------------------------- CONFIG -------------------------------- */
-  const VIDEO_SRC = "assets/video/aic-background.mp4?v=20260615m"; // bump ?v= when you swap the file
+  const VIDEO_SRC = "assets/video/aic-background.mp4?v=20260921-scroll-video"; // bump ?v= when you swap the file
   // For HLS, set VIDEO_SRC to a .m3u8 and load hls.js, or use an <source> list.
   const EASE      = 0.18;    // 0..1, lower = smoother/heavier scrub, higher = snappier
   const SEEK_MIN  = 0.008;   // seconds, ignore micro-seeks to spare the decoder
@@ -32,6 +32,8 @@
   let videoReady = false;
   let duration = 0;
   let lastSeek = -1;
+  let blobUrl = "";
+  let blobFallbackPending = false;
   let winH = window.innerHeight;
   let frameId = 0;
   function wake() { if (!frameId && !document.hidden) frameId = requestAnimationFrame(frame); }
@@ -43,20 +45,56 @@
   }
 
   /* ------------------------------ VIDEO -------------------------------- */
+  function hasSeekableTimeline() {
+    try {
+      return video.seekable.length > 0 &&
+        video.seekable.end(video.seekable.length - 1) > 0.1;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function activateVideo() {
+    duration = video.duration || 0;
+    if (!duration) return;
+    videoReady = true;
+    video.classList.add("is-live");
+    stopCanvas();
+    computeTarget();
+  }
+
+  async function loadSeekableBlob() {
+    if (blobFallbackPending || blobUrl) return;
+    blobFallbackPending = true;
+    try {
+      const response = await fetch(VIDEO_SRC, { cache: "force-cache" });
+      if (!response.ok) throw new Error("Video request failed: " + response.status);
+      blobUrl = URL.createObjectURL(await response.blob());
+      video.src = blobUrl;
+      video.load();
+    } catch (e) {
+      // Keep the animated canvas fallback if the video cannot be made seekable.
+      videoReady = false;
+    } finally {
+      blobFallbackPending = false;
+    }
+  }
+
   function initVideo() {
     video.muted = true;            // required for programmatic control on most browsers
     video.playsInline = true;
     video.preload = "auto";
     video.src = VIDEO_SRC;
 
-    video.addEventListener("loadedmetadata", () => {
-      duration = video.duration || 0;
-      if (duration > 0) {
-        videoReady = true;
-        video.classList.add("is-live");
-        stopCanvas();   // the building now fills the screen, so the fallback is never seen
-        wake();
+    video.addEventListener("canplay", () => {
+      // Static preview servers such as `python -m http.server` do not support
+      // byte-range requests, so a paused video cannot seek even when fully
+      // buffered. A Blob URL gives the browser a local, seekable timeline.
+      if (!hasSeekableTimeline() && !video.currentSrc.startsWith("blob:")) {
+        loadSeekableBlob();
+        return;
       }
+      activateVideo();
     });
     // If the file is missing/unsupported, we simply keep the canvas fallback.
     video.addEventListener("error", () => { videoReady = false; });
@@ -71,6 +109,9 @@
     };
     window.addEventListener("touchstart", nudge, { once: true, passive: true });
     window.addEventListener("pointerdown", nudge, { once: true });
+    window.addEventListener("beforeunload", () => {
+      if (blobUrl) URL.revokeObjectURL(blobUrl);
+    }, { once: true });
   }
 
   /* ----------------------------- RAF LOOP ------------------------------ */

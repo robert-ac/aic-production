@@ -1,0 +1,14 @@
+{
+  "name": "aic-website-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser tests for the AIC website navigation. Kept out of the site root so the site itself stays dependency-free.",
+  "scripts": {
+    "test": "node run-all.cjs",
+    "test:desktop": "node nav-desktop.cjs",
+    "test:mobile": "node nav-mobile.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  }
+}

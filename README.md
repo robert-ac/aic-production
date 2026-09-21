@@ -57,6 +57,8 @@ assets/
   video/    aic-background.mp4 (scroll-driven hero video)
 
 docs/                            Content-strategy reference (not part of the live site)
+supabase/                        Lead enrichment migration + Edge Function
+integrations/google-sheets/      Optional Sales Intelligence Sheet mirror
 ```
 
 > `archive/` (legacy pages from a prior nav structure) is kept on disk for reference
@@ -70,5 +72,7 @@ docs/                            Content-strategy reference (not part of the liv
   linking demos to <https://alebex.ai/>.
 - External links: event registration on [Luma](https://luma.com/b90nqjol),
   updates on [LinkedIn](https://www.linkedin.com/company/alexinnovationc/posts/).
+- **Lead sales research:** deployment and secret setup are documented in
+  [`docs/lead-sales-research.md`](docs/lead-sales-research.md).
 
 Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <https://alexic.ca>

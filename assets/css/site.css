@@ -305,12 +305,12 @@ body.is-menu-open .stage__scrim {
 .btn--lg { padding: 0.95rem 1.9rem; font-size: var(--size-body); }
 .btn--primary {
   position: relative; isolation: isolate;
-  background: #1488F5; color: #fff;
+  background: #0B6FB9; color: #fff;
   box-shadow: 0 10px 28px rgba(20,136,245,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
 }
 .btn--primary::before {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-  background: linear-gradient(135deg, #0A4FB0 0%, #1488F5 55%, #4FC6FF 100%);
+  background: linear-gradient(135deg, #073E8C 0%, #0B6FB9 55%, #1E8FE8 100%);
   opacity: 0; transition: opacity 0.35s var(--ease-out);
 }
 .btn--primary:hover {
@@ -485,6 +485,18 @@ h2.display-lg, h2.display-md { margin-top: 0.3rem; max-width: 18ch; }
 .hero__wrap .hero__title,
 .hero__wrap .hero__sub { text-shadow: 0 2px 32px rgba(3,10,25,0.78), 0 2px 8px rgba(3,10,25,0.65); }
 .hero__wrap .hero__cta { justify-content: center; }
+/* .stage__scrim darkens the left edge — it was built for a left-aligned hero.
+   This hero is centred, so the sub-line ended up on the bright glass of the
+   building with nothing but a text-shadow holding it. A soft pool behind the
+   copy restores the reading without flattening the footage. */
+.hero__wrap { position: relative; isolation: isolate; }
+.hero__wrap::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset: -10% 0;
+  background: radial-gradient(ellipse 58% 56% at 50% 50%,
+    rgba(4,13,29,0.74) 0%, rgba(4,13,29,0.60) 42%,
+    rgba(4,13,29,0.26) 68%, rgba(4,13,29,0) 84%);
+}
 
 /* primary resting state — flat blue, gradient reveals on hover (base .btn--primary) */
 .hero__cta .btn--primary {
@@ -1264,9 +1276,13 @@ h2.display-lg, h2.display-md { margin-top: 0.3rem; max-width: 18ch; }
   transform: translateY(-50%) translateX(14px);
   display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem;
   opacity: 0; pointer-events: none;
-  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  /* visibility, not just opacity: while the rail is faded out its 11 links were
+     still in the tab order, so keyboard focus disappeared into an invisible
+     column before the page had even scrolled. */
+  visibility: hidden;
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out), visibility 0.6s;
 }
-.secrail.is-live { opacity: 1; pointer-events: auto; transform: translateY(-50%) translateX(0); }
+.secrail.is-live { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(-50%) translateX(0); }
 /* text labels instead of numbered circles */
 .secrail::before, .secrail__fill, .secrail__dot { display: none; }
 .secrail a { position: relative; display: block; text-decoration: none; }

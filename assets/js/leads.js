@@ -70,6 +70,7 @@
         job_title:    fd.get("jobtitle") || "",
         email:        fd.get("email") || "",
         phone:        fd.get("phone") || "",
+        company_website: fd.get("website") || "",
         inquiry_type: fd.get("inquiry") || "",
         company_size: fd.get("size") || "",
         message:      fd.get("message") || "",
