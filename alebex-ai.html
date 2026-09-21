@@ -25,8 +25,9 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://alexic.ca", "logo": "https://alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
-<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-nav-indicator" />
-<link rel="stylesheet" href="assets/css/arch.css?v=20260921-arch1" />
+<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-footer-logo" />
+<link rel="stylesheet" href="assets/css/arch.css?v=20260921-validation-map-2" />
+<link rel="stylesheet" href="assets/css/benchmark-proof.css?v=20260921h" />
 </head>
 <body class="arch" style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
 <div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -95,6 +96,43 @@
     </div>
   </div>
   </section>
+  <section class="arch-band arch-band--white alebex-benchmark" id="benchmark">
+    <div class="arch-band__inner">
+      <div class="benchmark-proof benchmark-proof--page">
+        <div class="benchmark-proof__header">
+          <div class="benchmark-proof__rank">
+            <strong>#1</strong>
+            <span class="benchmark-proof__country"><img class="benchmark-proof__flag" src="assets/img/brand/canada-flag-official.png" width="64" height="32" alt="" aria-hidden="true">Canada</span>
+          </div>
+          <div class="benchmark-proof__copy">
+            <p class="benchmark-proof__source">Canadian-built. Independently benchmarked.</p>
+            <h2>Canada’s #1. Ranked #8 worldwide.</h2>
+            <p>Alebex STT achieved a 4.0% word error rate on the Artificial Analysis AA-WER Streaming Index for final transcription, making it the highest-ranked Canadian model in the September 21, 2026 snapshot.</p>
+          </div>
+          <div class="benchmark-proof__metric">
+            <strong>#8</strong>
+            <span class="benchmark-proof__world"><svg class="benchmark-proof__globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Worldwide</span>
+          </div>
+        </div>
+        <figure class="benchmark-proof__figure">
+          <a href="https://artificialanalysis.ai/speech-to-text/streaming" target="_blank" rel="noopener noreferrer" aria-label="View the current Artificial Analysis streaming speech-to-text leaderboard">
+            <span class="benchmark-proof__chart">
+              <img src="assets/img/brand/alebex/aa-wer-streaming-2026-09-21.png" width="2464" height="840" loading="lazy" decoding="async" alt="Artificial Analysis AA-WER Streaming Index chart dated September 21, 2026, showing Alebex STT at 4.0 percent word error rate in eighth position">
+              <svg class="benchmark-proof__crown" viewBox="0 0 40 30" aria-hidden="true"><path d="M4 24 2 8l10 8L20 3l8 13 10-8-2 16H4Z"/><path d="M5 27h30"/></svg>
+            </span>
+          </a>
+          <figcaption>Source: <a href="https://artificialanalysis.ai/speech-to-text/streaming" target="_blank" rel="noopener noreferrer">Artificial Analysis AA-WER Streaming Index</a>, Final Transcription. Snapshot dated September 21, 2026. Lower WER is better; rankings may change as models are added or retested.</figcaption>
+        </figure>
+        <div class="benchmark-proof__incubator">
+          <div>
+            <h3>From AIC incubator to a global top-10 model.</h3>
+            <p>Alebex proves that a Canadian team can build AI that competes globally. If you are building the next globally competitive Canadian AI company, AIC is where it can start.</p>
+          </div>
+          <a class="btn btn--primary benchmark-proof__cta" href="contact.html?type=founder">Build with AIC</a>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="arch-band arch-band--navy" id="latency">
     <div class="arch-band__inner">
     <span class="overline">Why voice AI is hard</span>
@@ -124,35 +162,53 @@
            already plotted above; their explanations now live on the rows. -->
     </div>
   </section>
-  <section class="arch-band arch-band--white">
+  <section class="arch-band arch-band--white alebex-safety" id="output-safety">
     <div class="arch-band__inner">
-    <span class="overline">Technical safety</span>
-    <h2>Explicit anti-hallucination, <span class="accent">fast enough for real-time voice</span>.</h2>
-    <p class="plead">Traditional reflection architectures can take about 600ms per round trip. ALEBEX AI uses a lightweight SLM to validate information in roughly 20ms before it reaches the caller, maintaining accuracy while preserving a smooth, natural conversation.</p>
-    <div class="vsgrid">
-      <div class="vscard vscard--bad">
-        <span class="vscard__tag">Traditional reflection · ~600ms / round</span>
-        <ol class="flowsteps">
-          <li><span class="flowsteps__n">1</span> User query</li>
-          <li><span class="flowsteps__n">2</span> Generate</li>
-          <li><span class="flowsteps__n">3</span> Reflect / check (repeat if needed)</li>
-          <li><span class="flowsteps__n">4</span> Final answer</li>
-        </ol>
-        <p class="vscard__note">Repeated reflection cycles add latency and can slow the voice experience.</p>
+    <span class="overline">Output safety</span>
+    <div class="alebex-safety__intro">
+      <div>
+        <h2>The fastest hallucination is still a hallucination.</h2>
+        <p class="plead">Every sentence is checked against off-policy regions of latent space before it becomes audio — verdict in under 50 milliseconds, alongside synthesis rather than in front of it.</p>
       </div>
-      <div class="vscard vscard--good">
-        <span class="vscard__tag">ALEBEX AI explicit validation · ~20ms SLM check</span>
-        <ol class="flowsteps">
-          <li><span class="flowsteps__n">1</span> User input</li>
-          <li><span class="flowsteps__n">2</span> AI response draft</li>
-          <li><span class="flowsteps__n">3</span> SLM validation ~20ms</li>
-          <li class="is-pass"><span class="flowsteps__n">&#10003;</span> Pass / block</li>
-          <li><span class="flowsteps__n">5</span> Delivered response</li>
-        </ol>
-        <p class="vscard__note">Validation happens before the answer reaches the user, low latency, better voice UX.</p>
-      </div>
+      <p class="alebex-safety__position">Other agentic systems don't put explicit anti-hallucination in the pipeline, they rely on the prompt whereas Alebex has a dedicated validation layer.</p>
     </div>
-    <div class="proofbar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> Every response is checked before delivery, improving reliability without sacrificing speed.</div>
+    <figure class="validation-map" aria-label="Comparison of traditional serial reflection and Alebex explicit validation">
+      <img class="validation-map__art" src="assets/img/brand/alebex/validation-pipeline-bg.webp" width="1672" height="941" loading="lazy" decoding="async" alt="">
+      <div class="validation-map__content">
+        <section class="validation-lane validation-lane--serial" aria-labelledby="validation-serial-title">
+          <header class="validation-lane__header">
+            <span>Traditional reflection</span>
+            <h3 id="validation-serial-title">A second model reviews in series</h3>
+          </header>
+          <ol class="validation-flow">
+            <li><small>01</small><strong>User query</strong></li>
+            <li><small>02</small><strong>Generate</strong></li>
+            <li class="validation-flow__loop"><small>03</small><strong>Reflect / Check</strong><em>Repeat if needed</em></li>
+            <li><small>04</small><strong>Final answer</strong></li>
+            <li class="validation-flow__result"><strong>Higher latency</strong></li>
+          </ol>
+          <p class="validation-lane__note">Repeated review cycles add latency — ~600ms per round.</p>
+        </section>
+
+        <section class="validation-lane validation-lane--alebex" aria-labelledby="validation-alebex-title">
+          <header class="validation-lane__header">
+            <span>Alebex explicit validation</span>
+            <h3 id="validation-alebex-title">Latent-space check, under 50 ms</h3>
+          </header>
+          <ol class="validation-flow validation-flow--alebex">
+            <li><small>01</small><strong>User input</strong></li>
+            <li><small>02</small><strong>AI response draft</strong></li>
+            <li class="validation-flow__gate"><small>03</small><strong>SLM validation ~20ms</strong></li>
+            <li class="validation-flow__verdict"><span class="is-pass">PASS — speaks</span><span class="is-fail">FAIL — blocks, redirects, or regenerates</span></li>
+            <li><small>04</small><strong>Delivered response</strong></li>
+            <li class="validation-flow__result"><strong>Low latency</strong></li>
+          </ol>
+          <p class="validation-lane__note">The check runs alongside synthesis — the caller-facing path never waits.</p>
+        </section>
+      </div>
+      <figcaption>Illustrative comparison. Experiments are done with batch size = 1 for the latent-space check.</figcaption>
+    </figure>
+    <a class="text-link alebex-safety__link" href="https://www.alebex.ai/models" target="_blank" rel="noopener noreferrer">Read about the Alebex Voice Engine →</a>
   </div>
   </section>
   <section class="arch-band arch-band--paper">

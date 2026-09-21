@@ -165,6 +165,24 @@
     }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
     document.querySelectorAll(".reveal, .pillar").forEach((el) => io.observe(el));
 
+    // The six-stage AIC journey is one continuous progression, so its motion
+    // is authored as a single sequence instead of six unrelated reveals.
+    // Content remains fully visible without JS and for reduced-motion users.
+    if (!reduceMotion) {
+      const journeyIo = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-playing");
+          journeyIo.unobserve(entry.target);
+        });
+      }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+
+      document.querySelectorAll(".journey").forEach((journey) => {
+        journey.classList.add("journey--motion-ready");
+        journeyIo.observe(journey);
+      });
+    }
+
     const navIo = new IntersectionObserver(([e]) => {
       nav.classList.toggle("is-stuck", !e.isIntersecting);
     }, { rootMargin: "-72px 0px 0px 0px" });
