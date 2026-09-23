@@ -133,7 +133,7 @@
   outline-offset: 4px;
 }
 
-.benchmark-proof__figure img {
+.benchmark-proof__chart > img:first-child {
   display: block;
   width: 100%;
   height: auto;
@@ -145,20 +145,16 @@
   width: 100%;
 }
 
-.benchmark-proof__crown {
+.benchmark-proof__chart-flag {
   position: absolute;
-  top: 55.2%;
+  top: 52.8%;
   left: 28.35%;
-  width: 2.5%;
-  min-width: 18px;
-  max-width: 30px;
+  width: 3.7%;
+  min-width: 26px;
+  max-width: 46px;
   height: auto;
-  overflow: visible;
-  fill: #ffd166;
-  stroke: #0a2948;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  border-radius: 2px;
+  object-fit: cover;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.24));
   transform: translate(-50%, -100%);
   pointer-events: none;
@@ -307,7 +303,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .benchmark-proof__figure img {
+  .benchmark-proof__chart > img:first-child {
     width: 760px;
     max-width: none;
   }
