@@ -203,3 +203,8 @@ header .mm__top:focus-visible,header .mm__panel a:focus-visible{outline:2px soli
    sequence marker, legible ink. */
 #how .kicker,#funnel .kicker,#venture .kicker,#alebex .kicker{color:#cfe2f4}
 #how .kicker .seq,#funnel .kicker .seq,#venture .kicker .seq,#alebex .kicker .seq{color:#7cc9ff}
+
+/* Keep the featured event close to the homepage introduction. */
+#innovation{padding-block:clamp(2rem,5vw,4rem);scroll-margin-top:6rem}
+#innovation .event-feature{margin-top:0}
+@media(max-width:760px){#innovation .event-feature__image{max-width:240px}}
