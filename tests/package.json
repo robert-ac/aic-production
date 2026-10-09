@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node run-all.cjs",
     "test:desktop": "node nav-desktop.cjs",
-    "test:mobile": "node nav-mobile.cjs"
+    "test:mobile": "node nav-mobile.cjs",
+    "test:search": "node search-readiness.cjs"
   },
   "devDependencies": {
     "playwright": "^1.62.0"

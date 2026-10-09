@@ -41,7 +41,7 @@
   ];
   var PRE = /\/events\//.test(location.pathname) ? '../' : '';
   var current = location.pathname.split('/').pop() || 'index.html';
-  function url(h) { return PRE + h; }
+  function url(h) { return PRE + (h.indexOf('index.html') === 0 ? './' + h.slice(10) : h); }
   function init() {
     var main = document.querySelector('main');
     if (main) {
@@ -71,6 +71,7 @@
       }
     }
     document.querySelectorAll('.mm').forEach(function(wrap,menuIndex) {
+      if (wrap.querySelector('.mm__item')) return; // Static HTML already carries the same menu.
       wrap.innerHTML = menu.map(function(group,i) {
         var active=i===activeIndex;
         var id='aic-menu-'+menuIndex+'-'+i;

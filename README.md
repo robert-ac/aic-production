@@ -20,7 +20,7 @@ Opening `index.html` directly also works for most pages.
 ## Structure
 
 Pages live at the repository root so production URLs match their canonical paths
-(`https://alexic.ca/<page>.html`). Shared assets are grouped by type under `assets/`.
+(`https://www.alexic.ca/<page>.html`). Shared assets are grouped by type under `assets/`.
 
 ```
 index.html                       Home (scroll-scrubbed video hero, operating model, ALEBEX orb)
@@ -37,7 +37,7 @@ canada-ai-strategy.html          Canada's AI strategy & funding
 results.html                     Case studies & results
 innovation-night.html            Innovation Nights feed
 news.html                        News & insights
-team.html                        About AIC / team
+about-aic.html                   About AIC / team
 partners.html                    Partners & ecosystem
 faq.html                         FAQ
 contact.html                     Routed contact / inquiry form
@@ -65,6 +65,10 @@ integrations/google-sheets/      Optional Sales Intelligence Sheet mirror
 > but git-ignored, so it is never shipped.
 
 ## Notes
+
+- **Search maintenance:** see [`docs/search-readiness-2026-10-09.md`](docs/search-readiness-2026-10-09.md).
+  After changing the shared menu, run `node scripts/sync-navigation.cjs` and
+  `node tests/search-readiness.cjs` to keep the static HTML navigation in sync.
 
 - **Palette / type:** navy + white + cyan; Sora / Inter / JetBrains Mono.
 - **Background video** is scrubbed by page scroll via `assets/scroll.js`.

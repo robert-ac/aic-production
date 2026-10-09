@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /button-styles.html
 
-Sitemap: https://alexic.ca/sitemap.xml
+Sitemap: https://www.alexic.ca/sitemap.xml

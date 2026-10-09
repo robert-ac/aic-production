@@ -42,7 +42,7 @@
     <div class="wrap footer__inner">
       <img class="footer__logo" src="assets/img/aic-logo-white.png" alt="Alexander Innovation Centre" width="1397" height="655">
       <p class="footer__tag">Connect. Learn. Build. Validate. Accelerate. Scale.</p>
-      <p class="footer__meta">Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <a href="https://alexic.ca">alexic.ca</a> · <a href="mailto:hello@alexic.ca">hello@alexic.ca</a></p>
+      <p class="footer__meta">Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <a href="https://www.alexic.ca">alexic.ca</a> · <a href="mailto:hello@alexic.ca">hello@alexic.ca</a></p>
       <p class="footer__links"><a href="contact.html">Contact</a> · <a href="about-aic.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="https://www.linkedin.com/company/alexinnovationc/" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </footer>`;

@@ -6,7 +6,7 @@
 const { spawnSync } = require('child_process');
 const path = require('path');
 
-const suites = ['nav-desktop.cjs', 'nav-mobile.cjs'];
+const suites = ['search-readiness.cjs', 'nav-desktop.cjs', 'nav-mobile.cjs'];
 let failed = 0;
 
 for (const suite of suites) {
