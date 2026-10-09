@@ -21,6 +21,11 @@
 .hackathon-preview__photos img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 20%; }
 .hackathon-preview__credit { margin: 12px 0 0; color: #526474; font-size: .8rem; }
 .hackathon-preview__credit a { text-decoration: underline; text-underline-offset: 3px; }
+/* The homepage recap sits on navy; product and article surfaces are light. */
+#innovation .event-feature--recap h2 { color: #fff; }
+#innovation .hackathon-winner strong,
+#innovation .hackathon-preview__head p,
+#innovation .hackathon-preview__credit { color: #c9d8e8; }
 .event-feature--recap a:focus-visible { outline: 2px solid #185abd; outline-offset: 4px; }
 @media (max-width: 760px) {
   .event-feature--recap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
