@@ -16,6 +16,7 @@
 .events-latest { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center; scroll-margin-top: 100px; }
 .events-latest__image { display: block; overflow: hidden; border-radius: 6px; }
 .events-latest__image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.events-latest__image--poster img { aspect-ratio: 1; object-fit: contain; }
 .events-latest__copy { min-width: 0; }
 .events-latest h3 { margin: 0 0 16px; font: 600 clamp(2rem, 3.3vw, 3rem)/1.14 var(--font-display); letter-spacing: -.03em; color: #142c3e; }
 .events-latest__meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: #526474; font-size: .875rem; margin-bottom: 18px; }
