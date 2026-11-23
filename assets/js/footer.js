@@ -22,7 +22,7 @@
         </div>
         <div class="finalcta__card">
           <span class="finalcta__label">Organizations</span>
-          <a class="finalcta__val" href="learn.html">Training &amp; AI Adoption</a>
+          <a class="finalcta__val" href="corporate-ai-adoption.html">Corporate AI Adoption</a>
         </div>
         <div class="finalcta__card">
           <span class="finalcta__label">Follow</span>
@@ -49,6 +49,7 @@
 
   var mount = document.getElementById("site-footer");
   if (mount) {
+    if (mount.dataset.cta === "none") html = html.slice(html.indexOf("<footer"));
     var prefix = /\/events\//.test(location.pathname) ? "../" : "";
     mount.innerHTML = html.replace(/(href|src)="(?!https?:|mailto:|#)([^"]+)"/g, function (_, attr, value) { return attr + '="' + prefix + value + '"'; });
   }

@@ -3,290 +3,66 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Five Pillars, One Roof | Alexander Innovation Centre</title>
-<meta name="description" content="The Alexander Innovation Centre is built around five clear pillars under one roof: infrastructure, research, incubation, training, and innovation." />
-<meta name="robots" content="noindex" />
+<title>AIC’s Five Strategic Pillars | Alexander Innovation Centre</title>
+<meta name="description" content="AIC connects education, industry, innovation, and community through five strategic pillars, supporting business transformation, workforce skills, and entrepreneurship." />
+<link rel="canonical" href="https://www.alexic.ca/five-pillars.html" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Alexander Innovation Centre" />
+<meta property="og:title" content="AIC’s Five Strategic Pillars | Alexander Innovation Centre" />
+<meta property="og:description" content="Research, industry collaboration, corporate training, education and incubation, and an AI compute environment and applied testbed." />
+<meta property="og:url" content="https://www.alexic.ca/five-pillars.html" />
+<meta property="og:image" content="https://www.alexic.ca/assets/img/video-poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260921-mobile-accordion" />
-<style>
-  :root { --floor-h: 280vh; --cyan: #1FA6FF; --navy: #0A1A3A; }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--navy); color: #fff; font-family: var(--font-body, system-ui, sans-serif); overflow-x: clip; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-  .stage { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #04101f url("assets/img/aic-building.webp") center/cover no-repeat; }
-  .stage__v { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .7s ease; transform: scale(1.06); will-change: opacity, transform; }
-  .stage__v.is-active { opacity: 1; }
-  .stage__end { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #04101f; opacity: 0; z-index: 3; pointer-events: none; }
-  .stage__scrim { position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(90deg, rgba(4,12,28,0.6) 0%, rgba(4,12,28,0.26) 46%, rgba(4,12,28,0) 100%), linear-gradient(0deg, rgba(4,12,28,0.5) 0%, rgba(4,12,28,0) 34%, rgba(4,12,28,0) 74%, rgba(4,12,28,0.32) 100%); }
-  .stage__grain { position: absolute; inset: -50%; pointer-events: none; opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-
-  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 40; background: rgba(255,255,255,0.08); }
-  .progress__fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--cyan), #7fe3e0); box-shadow: 0 0 12px rgba(31,166,255,0.7); }
-  .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 41; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem clamp(1rem, 4vw, 2.4rem); }
-  .topbar img { height: 26px; display: block; }
-  .topbar a.exit { font-family: var(--font-mono, monospace); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #cfe4ff; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); padding: 0.5rem 0.9rem; border-radius: 999px; backdrop-filter: blur(6px); background: rgba(8,20,40,0.3); transition: background .2s, border-color .2s; }
-  .topbar a.exit:hover { background: rgba(31,166,255,0.18); border-color: var(--cyan); }
-
-  .floors-rail { position: fixed; right: clamp(0.8rem, 2.5vw, 2rem); top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 0.9rem; align-items: center; }
-  .floors-rail a { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; text-decoration: none; font-family: var(--font-display, sans-serif); font-size: 0.98rem; font-weight: 800; color: #fff; background: rgba(6,16,32,0.5); border: 1.5px solid rgba(255,255,255,0.45); backdrop-filter: blur(6px); box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: color .3s, border-color .3s, background .3s, transform .3s, box-shadow .3s; }
-  .floors-rail a.is-active { color: #04101f; background: var(--cyan); border-color: #bfeaff; transform: scale(1.25); box-shadow: 0 0 0 5px rgba(31,166,255,0.30), 0 0 24px rgba(31,166,255,0.75); }
-  .floors-rail a span { position: absolute; right: 132%; white-space: nowrap; font-family: var(--font-display, sans-serif); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em; color: #fff; opacity: 0.92; transform: none; background: rgba(6,16,32,0.6); padding: 0.34rem 0.7rem; border-radius: 9px; backdrop-filter: blur(6px); box-shadow: 0 2px 12px rgba(0,0,0,0.45); pointer-events: none; transition: opacity .3s, color .3s; }
-  .floors-rail a.is-active span { opacity: 1; color: var(--cyan); font-weight: 700; }
-  @media (max-width: 680px) { .floors-rail a span { display: none; } .floors-rail a { width: 38px; height: 38px; font-size: 0.85rem; } }
-
-  .scroller { position: relative; z-index: 10; }
-  .intro { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 1.2rem; }
-  .intro__kicker { font-family: var(--font-mono, monospace); font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin: 0 0 1.4rem; }
-  .intro h1 { font-family: var(--font-display, sans-serif); font-weight: 800; margin: 0; font-size: clamp(2.4rem, 8vw, 6rem); line-height: 1.02; letter-spacing: -0.03em; text-shadow: 0 4px 40px rgba(0,0,0,0.5); }
-  .intro h1 em { font-style: normal; color: var(--cyan); }
-  .intro p { max-width: 46ch; margin: 1.4rem auto 0; color: #cfe0f5; font-size: 1.05rem; line-height: 1.6; }
-  .scrollhint { margin-top: 2.6rem; font-family: var(--font-mono, monospace); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #9fb6d6; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
-  .scrollhint::after { content: ""; width: 1px; height: 38px; background: linear-gradient(var(--cyan), transparent); animation: hint 1.8s ease-in-out infinite; }
-  @keyframes hint { 0%,100% { transform: scaleY(0.5); opacity: 0.4; transform-origin: top; } 50% { transform: scaleY(1); opacity: 1; transform-origin: top; } }
-
-  .floor { height: var(--floor-h); position: relative; }
-  .floor__pin { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding: 0 clamp(1.4rem, 7vw, 8rem); }
-  .floor__inner { max-width: 720px; }
-  .floor__num { font-family: var(--font-display, sans-serif); font-weight: 800; line-height: 0.8; font-size: clamp(5rem, 22vw, 16rem); letter-spacing: -0.04em; margin: 0; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.55); will-change: transform, opacity; }
-  .floor__tag { display: inline-block; font-family: var(--font-mono, monospace); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cyan); margin: 0.4rem 0 0; will-change: transform, opacity; }
-  .floor__name { font-family: var(--font-display, sans-serif); font-weight: 800; font-size: clamp(2rem, 5.5vw, 3.8rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0.6rem 0 0; text-shadow: 0 3px 30px rgba(0,0,0,0.5); will-change: transform, opacity; }
-  .floor__desc { max-width: 50ch; margin: 1.1rem 0 0; color: #d3e2f6; font-size: clamp(1rem, 2.4vw, 1.18rem); line-height: 1.65; will-change: transform, opacity; }
-
-  .outro { position: relative; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 1.2rem; }
-  .outro__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(4,12,28,0.72), rgba(4,12,28,0.4)); }
-  .outro > h2, .outro > p, .outro > .btnrow { position: relative; z-index: 2; }
-  .outro h2 { font-family: var(--font-display, sans-serif); font-weight: 800; font-size: clamp(2rem, 6vw, 4rem); margin: 0; letter-spacing: -0.02em; }
-  .outro p { color: #cfe0f5; max-width: 46ch; margin: 1.2rem auto 2rem; line-height: 1.6; }
-  .btnrow { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
-  .btn { font-family: var(--font-display, sans-serif); font-weight: 600; font-size: 1rem; text-decoration: none; padding: 0.95rem 1.7rem; border-radius: 999px; transition: transform .2s, box-shadow .2s, background .2s; }
-  .btn--primary { background: linear-gradient(180deg, #38C6FF, #1C99FF); color: #04121f; box-shadow: 0 14px 38px rgba(31,166,255,0.4); }
-  .btn--primary:hover { transform: translateY(-2px); }
-  .btn--ghost { color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-  .btn--ghost:hover { border-color: var(--cyan); color: var(--cyan); }
-
-  .loader { position: fixed; inset: 0; z-index: 60; background: var(--navy); display: grid; place-items: center; transition: opacity .6s ease; }
-  .loader.is-hidden { opacity: 0; pointer-events: none; }
-  .loader__ring { width: 46px; height: 46px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.15); border-top-color: var(--cyan); animation: spin 0.9s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  @media (prefers-reduced-motion: reduce) {
-    .stage__v { transform: none; }
-    .scrollhint::after { animation: none; }
-    .floor__num, .floor__tag, .floor__name, .floor__desc { transform: none !important; opacity: 1 !important; }
-  }
-</style>
+<link rel="stylesheet" href="assets/css/page.css?v=20260909b" />
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "@id": "https://www.alexic.ca/#org", "name": "Alexander Innovation Centre", "alternateName": "AIC", "url": "https://www.alexic.ca", "logo": "https://www.alexic.ca/assets/img/aic-logo-white.png", "email": "hello@alexic.ca", "address": {"@type": "PostalAddress", "streetAddress": "#101 - 570 Dunsmuir Street", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B 1Y1", "addressCountry": "CA"}, "sameAs": ["https://www.linkedin.com/company/alexinnovationc/"]}
 </script>
+<link rel="stylesheet" href="assets/css/refinement.css?v=20260921-footer-logo" />
+<link rel="stylesheet" href="assets/css/arch.css?v=20260921-arch1" />
+<link rel="stylesheet" href="assets/css/corporate-adoption.css?v=20261123" />
+
+<meta name="robots" content="noindex,follow" />
+<link rel="stylesheet" href="assets/css/ui-refinement.css?v=studio-3">
+<script src="assets/js/ui-refinement.js?v=studio-3" defer></script>
 </head>
-<body>
+<body class="arch adoption-page" style="--accent:#1E8FE8;">
+<div class="bg-fx" aria-hidden="true"><span></span><span></span><span></span></div>
 
-<div class="loader" id="loader"><div class="loader__ring"></div></div>
+<header class="pnav"><a class="pnav__brand" href="./" aria-label="Alexander Innovation Centre home"><img src="assets/img/aic-logo-wide-white-font.svg" alt="Alexander Innovation Centre" width="2663" height="428"></a><nav class="pnav__tabs" aria-label="Primary"><div class="mm"><!-- static-nav:start --><div class="mm__item"><a class="mm__top" href="founders-lab.html">Founders Lab</a><button class="mm-toggle" type="button" aria-label="Founders Lab sections" aria-expanded="false" aria-controls="aic-menu-0-0"><span aria-hidden="true"></span></button><div class="mm__panel" id="aic-menu-0-0"><a href="founders-lab.html#funnel">Founder Pathway</a><a href="founders-lab.html#community">Founder Community</a><a href="founders-lab.html#mentors">Mentors &amp; EIRs</a><a href="innovation-night.html">Innovation Nights</a></div></div><div class="mm__item"><a class="mm__top" href="corporate-ai-adoption.html">AI Adoption</a><button class="mm-toggle" type="button" aria-label="AI Adoption sections" aria-expanded="false" aria-controls="aic-menu-0-1"><span aria-hidden="true"></span></button><div class="mm__panel" id="aic-menu-0-1"><a href="corporate-ai-adoption.html">Corporate AI Adoption</a><a href="corporate-ai-adoption.html#delivery">Implementation &amp; Delivery</a><a href="ai-workforce-sme-adoption.html">Corporate AI Training</a><a href="ai-workforce-sme-adoption.html#packages">Learning Hub</a><a href="learn.html">AI Adoption Overview</a><a href="ai-readiness.html">Readiness &amp; Adoption</a><a href="funding.html">Funding &amp; Grants</a></div></div><div class="mm__item"><a class="mm__top" href="lab.html">Applied Research</a><button class="mm-toggle" type="button" aria-label="Applied Research sections" aria-expanded="false" aria-controls="aic-menu-0-2"><span aria-hidden="true"></span></button><div class="mm__panel" id="aic-menu-0-2"><a href="applied-research.html">Research &amp; Innovation</a><a href="lab.html#research">AI Pilots &amp; Validation</a><a href="lab.html#infrastructure">AI Infrastructure</a><a href="data-centre.html">Compute Lab</a><a href="alebex-ai.html">ALEBEX AI</a></div></div><div class="mm__item"><a class="mm__top" href="accelerator.html">Accelerator</a><button class="mm-toggle" type="button" aria-label="Accelerator sections" aria-expanded="false" aria-controls="aic-menu-0-3"><span aria-hidden="true"></span></button><div class="mm__panel" id="aic-menu-0-3"><a href="accelerator.html#stages">Venture Stages</a><a href="accelerator.html#ventures">Featured Ventures</a><a href="alebex-ai.html">ALEBEX AI</a></div></div><div class="mm__item"><a class="mm__top" href="about-aic.html">About</a><button class="mm-toggle" type="button" aria-label="About sections" aria-expanded="false" aria-controls="aic-menu-0-4"><span aria-hidden="true"></span></button><div class="mm__panel" id="aic-menu-0-4"><a href="./#how">How AIC Works</a><a href="canada-ai-strategy.html">Canada's AI Strategy</a><a href="news.html">News &amp; Insights</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div><!-- static-nav:end --></div></nav><a class="btn btn--solid" href="founders-lab.html#join">Join AIC</a></header>
 
-<div class="stage" aria-hidden="true">
-  <video class="stage__v" muted playsinline preload="auto" data-floor="0" src="assets/video/videos/01_floor1_infrastructure.mp4?v=intra"></video>
-  <video class="stage__v" muted playsinline preload="metadata" data-floor="1" src="assets/video/videos/02_floor2_research_end.mp4?v=intra"></video>
-  <video class="stage__v" muted playsinline preload="metadata" data-floor="2" src="assets/video/videos/03_floor3_incubation.mp4?v=intra"></video>
-  <video class="stage__v" muted playsinline preload="metadata" data-floor="3" src="assets/video/videos/04_floor4_training.mp4?v=intra"></video>
-  <video class="stage__v" muted playsinline preload="metadata" data-floor="4" src="assets/video/videos/05_floor5_innovation.mp4?v=intra"></video>
-  <video class="stage__v" muted playsinline preload="metadata" data-floor="5" src="assets/video/videos/06_overview.mp4?v=intra"></video>
-  <div class="stage__scrim"></div>
-  <div class="stage__grain"></div>
-  <img class="stage__end" src="assets/img/five-pillars-diagram.png?v=1" alt="The AIC building, five pillars above Canadian AI Infrastructure" width="1672" height="941">
+<main id="main"><section class="arch-open" id="top"><div class="arch-open__inner"><p class="adoption-title">Alexander Innovation Centre</p>
+<h1>Five strategic pillars.<br>One AI community hub.</h1>
+<p class="arch-lead">AIC connects business transformation, workforce skills, and entrepreneurship through education, industry, innovation, and community.</p>
+<div class="arch-actions"><a class="btn btn--primary" href="corporate-ai-adoption.html">Explore Corporate AI Adoption</a><a class="btn btn--ghost" href="founders-lab.html">Explore Founders Lab</a></div>
 </div>
-
-<div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
-
-<header class="topbar">
-  <a href="./" aria-label="AIC home"><img src="assets/img/aic-logo-white.png" alt="Alexander Innovation Centre" /></a>
-  <a class="exit" href="./">Exit ride &rarr;</a>
-</header>
-
-<nav class="floors-rail" id="rail" aria-label="Floors">
-  <a href="#f0" data-go="0">01<span>Infrastructure</span></a>
-  <a href="#f1" data-go="1">02<span>Research</span></a>
-  <a href="#f2" data-go="2">03<span>Incubation</span></a>
-  <a href="#f3" data-go="3">04<span>Corporate Training</span></a>
-  <a href="#f4" data-go="4">05<span>Innovation Nights</span></a>
-  <a href="#f5" data-go="5">&#10022;<span>Overview</span></a>
-</nav>
-
-<main class="scroller" id="main">
-
-  <section class="intro">
-    <p class="intro__kicker">Alexander Innovation Centre</p>
-    <h1>Five clear pillars.<br /><em>One roof.</em></h1>
-    <p>The Innovation Centre is built around five clear pillars under one roof, from Canadian AI infrastructure up to the community that ships. Scroll to move through all five.</p>
-    <div class="scrollhint">Scroll</div>
-  </section>
-
-  <section class="floor" id="f0" data-floor="0">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">01</p>
-      <span class="floor__tag">Pillar 01 &middot; Ground floor</span>
-      <h2 class="floor__name">Canadian AI Infrastructure</h2>
-      <p class="floor__desc">Staged, Canadian-hosted compute and a trusted deployment backbone, the foundation every other pillar stands on, so applied AI can be tested, hosted, and governed on home soil.</p>
-    </div></div>
-  </section>
-
-  <section class="floor" id="f1" data-floor="1">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">02</p>
-      <span class="floor__tag">Pillar 02</span>
-      <h2 class="floor__name">Applied AI Research</h2>
-      <p class="floor__desc">Applied AI research turns real problems into validated pilots, prototypes, and deployment-ready solutions, with partners, not in a vacuum.</p>
-    </div></div>
-  </section>
-
-  <section class="floor" id="f2" data-floor="2">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">03</p>
-      <span class="floor__tag">Pillar 03</span>
-      <h2 class="floor__name">Incubation</h2>
-      <p class="floor__desc">The commercialization pathway: validation, mentorship, pilot access, and Canadian-hosted compute that move applied AI ideas toward market-ready companies.</p>
-    </div></div>
-  </section>
-
-  <section class="floor" id="f3" data-floor="3">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">04</p>
-      <span class="floor__tag">Pillar 04</span>
-      <h2 class="floor__name">Corporate Training</h2>
-      <p class="floor__desc">Corporate training that helps whole organizations put AI to work, owners, managers, and staff learning to use AI in real tasks, from half-day briefings to multi-week cohorts.</p>
-    </div></div>
-  </section>
-
-  <section class="floor" id="f4" data-floor="4">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">05</p>
-      <span class="floor__tag">Pillar 05 &middot; Top floor</span>
-      <h2 class="floor__name">Innovation Nights</h2>
-      <p class="floor__desc">At the top of the house, Innovation Nights bring builders, founders, employers, students, and investors together, where Vancouver's AI ecosystem actually connects.</p>
-    </div></div>
-  </section>
-
-  <section class="floor" id="f5" data-floor="5">
-    <div class="floor__pin"><div class="floor__inner">
-      <p class="floor__num">&#10022;</p>
-      <span class="floor__tag">All five &middot; One roof</span>
-      <h2 class="floor__name">One Innovation Centre.</h2>
-      <p class="floor__desc">Five pillars under one roof, infrastructure, research, incubation, training, and Innovation Nights, working as one engine that takes Canadian AI from idea to real-world impact.</p>
-    </div></div>
-  </section>
-
-
+</section>
+<section class="arch-band arch-band--white" id="f5"><div class="arch-band__inner"><div class="arch-head"><h2>The AIC strategic core.</h2>
+<p>The five pillars connect research, delivery, skills, talent, and shared test environments.</p>
+</div>
+<div class="adoption-routes"><article class="adoption-route" id="f1"><h3>Research &amp; Innovation</h3>
+<p>Applied research and practical problem solving.</p>
+<a class="adoption-link" href="applied-research.html">Explore this area</a></article>
+<article class="adoption-route" id="f4"><h3>Industry Collaboration</h3>
+<p>Forward Deployed Engineer services for businesses and community groups.</p>
+<a class="adoption-link" href="corporate-ai-adoption.html">Explore this area</a></article>
+<article class="adoption-route" id="f3"><h3>Corporate Training</h3>
+<p>Management, general staff, and technical/FDE learning.</p>
+<a class="adoption-link" href="ai-workforce-sme-adoption.html">Explore this area</a></article>
+<article class="adoption-route" id="f2"><h3>Education &amp; Incubation</h3>
+<p>Community support, Alexander College talent connections, and AIC Founders Lab.</p>
+<a class="adoption-link" href="founders-lab.html">Explore this area</a></article>
+<article class="adoption-route" id="f0"><h3>AI Compute Environment &amp; Applied Testbed</h3>
+<p>Build agents and test integrations in a shared setting.</p>
+<a class="adoption-link" href="lab.html#infrastructure">Explore this area</a></article>
+</div>
+</div>
+</section>
 </main>
 
-<script>
-(function () {
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var videos = Array.prototype.slice.call(document.querySelectorAll(".stage__v"));
-  var floors = Array.prototype.slice.call(document.querySelectorAll(".floor"));
-  var rail   = Array.prototype.slice.call(document.querySelectorAll("#rail a"));
-  var fill   = document.getElementById("progressFill");
-  var loader = document.getElementById("loader");
-  var endImg = document.querySelector(".stage__end");
-
-  var winH = window.innerHeight;
-  var EASE = 0.16, SEEK_MIN = 0.01;
-  var smooth = videos.map(function () { return 0; });
-  var loaded = videos.map(function (v, i) { return i === 0; });
-  var active = -1;
-
-  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-  function hideLoader() { loader.classList.add("is-hidden"); }
-  if (videos[0].readyState >= 2) hideLoader();
-  else videos[0].addEventListener("loadeddata", hideLoader, { once: true });
-  setTimeout(hideLoader, 4000);
-
-  function ensureLoaded(i) {
-    if (i < 0 || i >= videos.length || loaded[i]) return;
-    loaded[i] = true; videos[i].preload = "auto";
-    try { videos[i].load(); } catch (e) {}
-  }
-  function floorProgress(i) {
-    var r = floors[i].getBoundingClientRect();
-    if (i === floors.length - 1) {
-      // final clip scrubs all the way to the page bottom, so it plays out fully as you reach the end
-      var topDoc = r.top + window.scrollY;
-      var end = document.documentElement.scrollHeight - winH;
-      if (end <= topDoc) return 0;
-      return clamp((window.scrollY - topDoc) / (end - topDoc));
-    }
-    var span = r.height - winH;
-    if (span <= 0) return 0;
-    return clamp(-r.top / span);
-  }
-  function currentFloor() {
-    var mid = winH * 0.5;
-    for (var i = 0; i < floors.length; i++) {
-      var r = floors[i].getBoundingClientRect();
-      if (r.top <= mid && r.bottom > mid) return i;
-    }
-    return floors[0].getBoundingClientRect().top > mid ? -1 : floors.length - 1;
-  }
-  function smoothstep(a, b, x) { var t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); }
-
-  function frame() {
-    requestAnimationFrame(frame);
-    var max = document.documentElement.scrollHeight - winH;
-    fill.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0).toFixed(2) + "%";
-    if (endImg) endImg.style.opacity = smoothstep(0.85, 1, floorProgress(floors.length - 1)).toFixed(3);
-
-    var cf = currentFloor();
-    if (cf !== active) {
-      active = cf;
-      videos.forEach(function (v, i) { v.classList.toggle("is-active", i === active); });
-      rail.forEach(function (a, i) { a.classList.toggle("is-active", i === active); });
-      ensureLoaded(active); ensureLoaded(active + 1);
-    }
-
-    for (var i = 0; i < floors.length; i++) {
-      var p = floorProgress(i);
-      if (i >= active - 1 && i <= active + 1) {
-        smooth[i] += (p - smooth[i]) * (reduce ? 1 : EASE);
-        var v = videos[i], dur = v.duration || 0;
-        if (dur && v.readyState >= 1) {
-          var t = smooth[i] * (dur - 0.05);
-          if (Math.abs(t - v.currentTime) > SEEK_MIN) { try { v.currentTime = t; } catch (e) {} }
-        }
-        v.style.transform = "scale(" + (1.06 + smooth[i] * 0.06).toFixed(3) + ")";
-      }
-      if (!reduce && i >= active - 1 && i <= active + 1) {
-        var p2 = floorProgress(i);
-        var op = smoothstep(0.03, 0.16, p2) * (1 - smoothstep(0.9, 1.0, p2));
-        var num = floors[i].querySelector(".floor__num");
-        var tag = floors[i].querySelector(".floor__tag");
-        var name = floors[i].querySelector(".floor__name");
-        var desc = floors[i].querySelector(".floor__desc");
-        var shift = (p2 - 0.5);
-        num.style.transform  = "translateY(" + (shift * -120).toFixed(1) + "px)";
-        num.style.opacity = (op * 0.9).toFixed(3);
-        tag.style.transform  = "translateY(" + (shift * -70).toFixed(1) + "px)";
-        name.style.transform = "translateY(" + (shift * -54).toFixed(1) + "px)";
-        desc.style.transform = "translateY(" + (shift * -32).toFixed(1) + "px)";
-        tag.style.opacity = name.style.opacity = desc.style.opacity = op.toFixed(3);
-      }
-    }
-  }
-
-  window.addEventListener("resize", function () { winH = window.innerHeight; }, { passive: true });
-  rail.forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      var i = +a.getAttribute("data-go");
-      var top = window.scrollY + floors[i].getBoundingClientRect().top + floors[i].offsetHeight * 0.4 - winH * 0.4;
-      window.scrollTo({ top: top, behavior: "smooth" });
-    });
-  });
-
-  requestAnimationFrame(frame);
-})();
-</script>
+<div id="site-footer" data-cta="none"></div>
+<script src="assets/js/nav.js?v=20261123-adoption"></script>
+<script src="assets/js/footer.js?v=20261123-adoption"></script>
 </body>
 </html>

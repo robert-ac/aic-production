@@ -12,11 +12,13 @@
       ["Mentors & EIRs", "founders-lab.html#mentors"],
       ["Innovation Nights", "innovation-night.html"]
     ]},
-    { label: "AI Adoption", href: "learn.html", links: [
-      ["Learning Pathways", "learn.html#pathways"],
+    { label: "AI Adoption", href: "corporate-ai-adoption.html", links: [
+      ["Corporate AI Adoption", "corporate-ai-adoption.html"],
+      ["Implementation & Delivery", "corporate-ai-adoption.html#delivery"],
       ["Corporate AI Training", "ai-workforce-sme-adoption.html"],
-      ["Workforce Upskilling", "for-smes.html"],
-      ["AI Readiness Review", "ai-readiness.html"],
+      ["Learning Hub", "ai-workforce-sme-adoption.html#packages"],
+      ["AI Adoption Overview", "learn.html"],
+      ["Readiness & Adoption", "ai-readiness.html"],
       ["Funding & Grants", "funding.html"]
     ]},
     { label: "Applied Research", href: "lab.html", links: [

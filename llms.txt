@@ -3,12 +3,13 @@
 > Alexander Innovation Centre (AIC) is a Vancouver-based applied AI platform that trains Canadian workforces, supports SME AI adoption, conducts applied research, incubates AI ventures, and develops trusted Canadian-hosted infrastructure — home of ALEBEX AI and Innovation Nights. Located at #101 – 570 Dunsmuir Street, Vancouver, BC V6B 1Y1. Contact: hello@alexic.ca.
 
 ## Key pages
+- [Corporate AI Adoption](https://www.alexic.ca/corporate-ai-adoption.html): The 2027 model: Readiness & Adoption, Implementation & Delivery, Training & Upskilling. One-month roadmaps and three-month implementations; pilots optional.
 - [Home](https://www.alexic.ca/): What AIC does and where to start.
-- [AI Readiness Review](https://www.alexic.ca/ai-readiness.html): Free AI consultation — the flagship entry offer for Canadian SMEs.
+- [Readiness & Adoption](https://www.alexic.ca/ai-readiness.html): Workflow analysis and a prioritized roadmap; one-month roadmap phase in the 2027 model.
 - [Canada's AI Strategy & Funding](https://www.alexic.ca/canada-ai-strategy.html): Plain-language guide to Canada's AI for All strategy and SME funding (LIFT, Compute Access Fund).
 - [For SMEs & Employers](https://www.alexic.ca/for-smes.html): A practical, low-risk path to AI for small and medium businesses.
 - [Divisions](https://www.alexic.ca/divisions.html): AIC’s operating model and links to its core areas.
-- [Workforce Academy](https://www.alexic.ca/ai-workforce-sme-adoption.html): Corporate AI training and SME adoption.
+- [Corporate AI Training](https://www.alexic.ca/ai-workforce-sme-adoption.html): Role-based learning. Current prices are maintained in the [Corporate AI Adoption pricing section](https://www.alexic.ca/corporate-ai-adoption.html#training).
 - [ALEBEX AI](https://www.alexic.ca/alebex-ai.html): AIC's flagship Canadian voice AI and agentic workflow platform, in production.
 - [Innovation Nights](https://www.alexic.ca/innovation-night.html): Applied-AI community events, hackathons, and event recaps in downtown Vancouver.
 - [Team](https://www.alexic.ca/about-aic.html): AIC's leadership and engineering team.

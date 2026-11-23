@@ -1,0 +1,114 @@
+/* The studies inherit AIC tokens. Only page composition changes. */
+body.adoption-page[data-design]{--design-space:clamp(64px,7vw,96px)}
+.adoption-page[data-design] .arch-band{padding-block:var(--design-space)}
+.adoption-page[data-design] .btn--primary{background:#0872b8;color:white}
+.adoption-page[data-design] .btn--primary:hover{background:#075c94}
+.design-inner{width:min(1180px,calc(100% - var(--gutter)*2));margin-inline:auto}
+.design-hero{padding-top:calc(72px + clamp(56px,6vw,88px))}
+.design-hero h1{font-family:var(--font-display);font-size:clamp(44px,4.8vw,68px);font-weight:600;line-height:1.08;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.design-model{font-size:13px;line-height:1.65;margin:0 0 24px;color:#b6cce0}
+.design-lead{font-size:clamp(17px,1.5vw,20px);line-height:1.65;margin:28px 0 0;max-width:48ch}
+.design-support{font-size:15px;line-height:1.7;max-width:50ch;margin:16px 0 0}
+.design-hero .arch-actions{margin-top:32px;align-items:center}
+.design-hero .btn{min-height:48px;padding-inline:24px}
+.design-hero .btn--ghost{background:transparent;color:#eef6ff;border-color:#728aa3}
+.design-hero .btn--ghost:hover{background:#193752}
+.design-hero--business{background:#07182f;color:#eef6ff;padding-bottom:0}
+.design-business-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.design-business-grid h1{max-width:13ch;color:#fff}
+.design-business-grid .design-lead{max-width:36ch}
+.design-hero--business .design-lead{color:#eaf2fb}
+.design-business-grid .design-support{color:#b6cce0}
+.design-business-art{margin:0;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.design-business-art picture{display:block}
+.design-business-art img{display:block;width:100%;height:420px;object-fit:cover;object-position:right center;border-radius:12px;background:#0c2746}
+.design-business-art figcaption{font-size:13px;line-height:1.6;color:#b6cce0;margin-top:16px}
+.design-business-nav{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;border-top:1px solid #2d4968}
+.design-business-nav a{padding:28px 24px 30px 0;color:#b6cce0;font-size:13px;line-height:1.6;text-decoration:none;display:block}
+.design-business-nav a span{display:block;color:#eef6ff;font-size:15px;font-weight:600;margin-bottom:6px}
+.design-business-nav a:hover span,.design-business-nav a:focus-visible span{color:#87d2ff}
+.adoption-page[data-design=business] .adoption-route{grid-template-columns:1fr 1.4fr 1fr}
+.adoption-page[data-design=business] .adoption-routes{margin-top:40px}
+.adoption-page[data-design=business] .adoption-process li{padding-block:22px}
+.adoption-page[data-design] .adoption-join .arch-head h2{max-width:22ch;font-size:clamp(32px,4vw,52px)}
+.adoption-page[data-design] .adoption-join .btn--ghost{background:transparent;color:#eaf2fb;border-color:#728aa3}
+.design-hero--services{background:#f2f5f9;color:#0e2038;padding-bottom:64px;border-bottom:1px solid #d0dce8}
+.design-hero--services .design-model{color:#47607c}
+.design-service-intro{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
+.design-service-intro h1{color:#0e2038;max-width:16ch}
+.design-service-intro .design-lead{margin:0;color:#47607c;max-width:40ch}
+.design-service-choice{margin-top:48px}
+.design-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #b6c9da}
+.design-tabs button{appearance:none;border:0;border-bottom:3px solid transparent;background:transparent;padding:20px 16px;color:#47607c;text-align:left;font-family:var(--font-body);font-size:15px;font-weight:600;line-height:1.5;cursor:pointer;min-height:64px}
+.design-tabs button:hover{background:#e5edf5;color:#0e2038}
+.design-tabs button[aria-selected=true]{background:#07182f;color:#f1f7fd;border-bottom-color:#30adff}
+.design-tabs button:focus-visible{outline:3px solid #0872b8;outline-offset:3px;z-index:1}
+#design-service-panel{background:#fff;padding:40px;min-height:300px}
+.design-service-detail{display:grid;grid-template-columns:1.6fr 1fr;gap:64px;align-items:start}
+.design-service-detail h2{font-family:var(--font-display);font-size:clamp(24px,2.2vw,32px);line-height:1.2;letter-spacing:-.025em;color:#0e2038;font-weight:600;margin:0;max-width:23ch}
+.design-service-detail p{color:#47607c;font-size:16px;line-height:1.7;margin:20px 0 0;max-width:55ch}
+.design-service-detail dl{margin:0;display:grid;gap:28px;padding-left:32px;border-left:1px solid #d0dce8}
+.design-service-detail dt{font-size:12px;line-height:1.6;color:#47607c;margin-bottom:8px}
+.design-service-detail dd{font-size:17px;line-height:1.55;font-weight:600;color:#0e2038;margin:0}
+.design-text-link{color:#0967ad;font-weight:600;font-size:14px;line-height:1.6;text-underline-offset:4px}
+.design-hero--services .arch-actions{gap:24px}
+.adoption-page[data-design=services] #engagements .adoption-route{grid-template-columns:1fr 1.5fr 1fr;padding-block:24px}
+.adoption-page[data-design=services] #training{background:#f2f5f9}
+.adoption-page[data-design=services] #training .arch-head{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+.adoption-page[data-design=services] #training .arch-head p{margin:0}
+.adoption-page[data-design=services] .adoption-pricing{border-top:1px solid #b6c9da;margin-top:36px}
+.design-hero--delivery {
+  background: #08182d;
+  color: #eaf2fb;
+  padding-bottom: clamp(44px, 6vw, 80px);
+}
+.design-delivery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+.design-delivery-grid h1 { color: #fff; font-size: clamp(40px, 4.6vw, 64px); }
+.design-delivery-grid .design-lead { color: #d8e8f5; max-width: 37ch; }
+.design-delivery-art { margin: 0; min-width: 0; }
+.design-delivery-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 34%;
+  border: 1px solid #36516c;
+  border-radius: 14px;
+  background: #0c1e33;
+}
+.design-delivery-art figcaption { margin-top: 9px; color: #b6cce0; font-size: .83rem; line-height: 1.45; }
+@media (max-width: 760px) {
+  .design-hero--delivery .design-delivery-grid { gap: 24px; }
+  .design-hero--delivery .design-model { margin-bottom: 14px; }
+  .design-hero--delivery .design-lead { margin-top: 16px; }
+  .design-hero--delivery .arch-actions { margin-top: 20px; }
+  .design-delivery-art img { aspect-ratio: 16 / 10; }
+}
+.has-design-preview{padding-bottom:80px}
+.design-preview-switch{position:fixed;z-index:150;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:#fff;padding:6px;border:1px solid #a9bfd4;border-radius:12px;box-shadow:0 8px 28px #06172b26;max-width:calc(100% - 24px)}
+.design-preview-switch a{font-family:var(--font-body);font-size:12px;line-height:1.5;padding:10px 14px;color:#47607c;text-decoration:none;white-space:nowrap;min-height:40px;display:flex;align-items:center;border-radius:8px}
+.design-preview-switch a[aria-current=page]{background:#07182f;color:#fff}
+.design-preview-switch a:hover:not([aria-current=page]){background:#edf3f8;color:#07182f}
+.design-preview-switch .design-preview-back{border-right:1px solid #d0dce8;border-radius:0;margin-right:4px}
+@media(max-width:1050px){.design-business-grid,.design-delivery-grid{gap:40px}.design-business-art img{height:380px}.design-hero h1{font-size:clamp(40px,5.5vw,60px)}.design-service-intro{gap:40px}.design-service-detail{gap:32px}}
+@media(max-width:760px){.design-hero{padding-top:128px}.design-business-grid,.design-delivery-grid,.design-service-intro,.design-service-detail{grid-template-columns:1fr;gap:36px}.design-hero h1{font-size:clamp(38px,8vw,56px)}.design-business-grid h1{max-width:15ch}.design-business-grid .design-lead{max-width:46ch}.design-model{font-size:12px;margin-bottom:20px}.design-support{font-size:14px}.design-lead{margin-top:24px;font-size:17px}.design-business-art{display:block}.design-business-art img{height:240px}.design-business-art figcaption{margin-top:12px}.design-business-nav{margin-top:32px;grid-template-columns:1fr}.design-business-nav a{padding:16px 0;border-bottom:1px solid #294664}.design-business-nav a:last-child{border:0}.design-business-nav a span{margin-bottom:2px}.design-business-nav a{font-size:12px}.design-business-nav a span{font-size:14px}.adoption-page[data-design=business] .adoption-route,.adoption-page[data-design=services] #engagements .adoption-route{grid-template-columns:1fr;gap:16px}.adoption-page[data-design=business] .adoption-output,.adoption-page[data-design=services] .adoption-output{grid-column:auto;padding:0;border:0}.design-service-intro{gap:24px}.design-service-intro h1{max-width:17ch}.design-service-choice{margin-top:32px}.design-tabs button{font-size:12px;padding:14px 10px;min-height:72px}.design-tabs{align-items:stretch}#design-service-panel{padding:28px 20px;min-height:0}.design-service-detail{gap:28px}.design-service-detail h2{font-size:25px}.design-service-detail p{font-size:15px}.design-service-detail dl{padding:24px 0 0;border-left:0;border-top:1px solid #d0dce8;gap:20px}.design-service-detail dd{font-size:16px}.design-service-detail .arch-actions{gap:20px;align-items:flex-start;flex-direction:column}.adoption-page[data-design=services] #training .arch-head{grid-template-columns:1fr;gap:20px}.design-delivery-grid h1{max-width:16ch}.design-preview-switch a{font-size:10px;padding:10px 8px}.design-preview-switch{gap:0;bottom:10px;padding:5px}.design-preview-switch .design-preview-back{margin-right:0}}
+@media(prefers-reduced-motion:no-preference){.design-tabs button,.design-preview-switch a{transition:color .18s ease,background-color .18s ease}}
+
+/* The service tabs reuse the original engagement content. */
+.design-business-nav{grid-template-columns:repeat(4,1fr)}
+.design-business-nav a{font-size:14px;padding-block:24px}
+.design-service-panels{background:#fff;padding:36px 40px}
+.design-service-panels .adoption-route{display:grid;grid-template-columns:1.5fr 1fr;gap:20px 48px;border:0;padding:0;align-items:start}
+.design-service-panels .adoption-route[hidden]{display:none!important}
+.design-service-panels .adoption-route h3{grid-column:1;font-size:26px}
+.design-service-panels .adoption-route>div{grid-column:1}
+.design-service-panels .adoption-output{grid-column:2;grid-row:1/3;padding-left:28px}
+.design-service-panels .adoption-output dd{font-size:18px}
+.adoption-context{font-size:14px!important;margin-top:24px}
+@media(max-width:760px){.design-business-nav{grid-template-columns:1fr 1fr;gap:0 16px}.design-business-nav a{font-size:12px}.design-service-panels{padding:28px 20px}.design-service-panels .adoption-route{grid-template-columns:1fr;gap:20px}.design-service-panels .adoption-output{grid-column:auto;grid-row:auto;padding:20px 0 0;border-left:0;border-top:1px solid #d0dce8}}

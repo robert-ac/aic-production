@@ -32,12 +32,14 @@
     (function () {
       var t = new URLSearchParams(location.search).get("type");
       if (!t) return;
-      var map = { "ai-readiness": "readiness", "training": "training", "workflow": "readiness",
-        "governance": "readiness", "alebex-demo": "Alebex", "research": "research",
+      var map = { "ai-readiness": "Corporate AI adoption", "corporate-ai-adoption": "Corporate AI adoption",
+        "training": "training", "workflow": "Corporate AI adoption",
+        "governance": "Corporate AI adoption", "alebex-demo": "Alebex", "research": "research",
         "venture-studio": "Incubation", "innovation-night": "Innovation", "infrastructure": "infrastructure",
-        "founders-lab": "Founders Lab", "accelerator": "Accelerator", "investor": "Investor",
+        "founder": "general inquiry", "founders-lab": "general inquiry",
+        "accelerator": "Accelerator", "investor": "general inquiry",
         "mentor": "Mentor" };
-      var kw = (map[t] || t).toLowerCase();
+      var kw = (Object.prototype.hasOwnProperty.call(map, t) ? map[t] : t).toLowerCase();
       var sel = form.querySelector("select[name=inquiry]");
       if (!sel) return;
       for (var i = 0; i < sel.options.length; i++) {

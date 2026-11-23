@@ -1,0 +1,20 @@
+.design-comparison{padding:144px 0 80px;background:#f2f5f9;color:#0e2038;min-height:100vh}
+.design-comparison__inner{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.design-comparison h1{font-family:var(--font-display);font-size:clamp(32px,4.4vw,56px);line-height:1.12;letter-spacing:-.035em;font-weight:600;color:#0e2038;max-width:20ch;margin:0}
+.design-comparison__intro{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:end;margin-bottom:48px}
+.design-comparison__intro p{font-size:16px;line-height:1.75;color:#47607c;margin:0;max-width:55ch}
+.design-comparison__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.design-study{margin:0;min-width:0;background:#fff;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.design-study__image{display:block;overflow:hidden;background:#07182f}
+.design-study__image img{width:100%;height:auto;display:block;aspect-ratio:1440/1000;object-fit:cover}
+.design-study__copy{padding:28px;display:flex;flex-direction:column;flex:1}
+.design-study h2{font-family:var(--font-display);font-size:24px;line-height:1.3;letter-spacing:-.025em;margin:0 0 16px;color:#0e2038;font-weight:600}
+.design-study p{font-size:14px;line-height:1.75;color:#47607c;margin:0 0 20px}
+.design-study dl{margin:0 0 28px;font-size:13px;line-height:1.7;color:#47607c}
+.design-study dt{font-weight:600;color:#0e2038;margin-top:12px}
+.design-study dd{margin:2px 0 0}
+.design-study .btn{background:#0872b8;color:#fff;align-self:flex-start;margin-top:auto;min-height:44px}
+.design-study .btn:hover{background:#075c94}
+.design-comparison__note{border-top:1px solid #cbd9e6;padding-top:24px;margin:40px 0 0;color:#47607c;font-size:14px;line-height:1.75;max-width:75ch}
+@media(max-width:1000px){.design-comparison__grid{grid-template-columns:1fr}.design-study{display:grid;grid-template-columns:1fr 1fr}.design-study__image{align-self:start}.design-study__copy{padding:24px}.design-comparison__intro{gap:32px}}
+@media(max-width:600px){.design-comparison{padding-top:120px}.design-comparison__intro{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.design-study{display:flex}.design-comparison__grid{gap:28px}.design-study h2{font-size:24px}}
