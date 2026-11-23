@@ -257,7 +257,7 @@ body.is-menu-open .stage__scrim {
   .nav__cta .cta-wide { display: none; }
   .nav__cta .cta-short { display: inline; }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1100px), (hover: none) {
   .nav { justify-content: flex-start; }
   .nav__brand { margin-right: auto; }
   .navmenu-toggle { display: flex; }

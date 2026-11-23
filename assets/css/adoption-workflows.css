@@ -20,6 +20,23 @@
 .design-business-art--event img {
   aspect-ratio: auto;
 }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .adoption-page[data-design=business] #engagements .adoption-route {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+    row-gap: 14px;
+  }
+  .adoption-page[data-design=business] #engagements .adoption-output {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+@media (pointer: coarse) {
+  .adoption-page #engagements .adoption-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
 .adoption-page #engagements,
 .adoption-page #delivery,
 .adoption-page .adoption-process li[id] {

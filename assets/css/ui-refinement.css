@@ -284,6 +284,16 @@ dialog.lightbox .lightbox__close:hover, dialog.lightbox .lightbox__nav:hover { b
 dialog.lightbox .lightbox__count { color: #c5d8eb; }
 dialog.lightbox .lightbox__img { object-fit: contain; }
 .ui-contact .contactcard { border-radius: 16px; }
+.ui-contact .pform label {
+  font: 600 .875rem/1.4 var(--font-body);
+  text-transform: none;
+  letter-spacing: normal;
+  color: #2e4a62;
+}
+.ui-contact .pform :is(input, textarea)::placeholder {
+  color: #526b80;
+  opacity: 1;
+}
 .ui-contact .pform input:focus-visible,
 .ui-contact .pform select:focus-visible,
 .ui-contact .pform textarea:focus-visible {

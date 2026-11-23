@@ -93,7 +93,7 @@
        bar treat link + gap + panel as a single hover region.
        --------------------------------------------------------------------- */
     var CLOSE_DELAY = 220;
-    var DESKTOP = '(min-width:1101px)';
+    var DESKTOP = '(min-width:1101px) and (hover:hover)';
     var bars = [];
     function desktop() { return window.matchMedia(DESKTOP).matches; }
     function itemOf(node) { return node && node.closest ? node.closest('.mm__item') : null; }
@@ -207,13 +207,6 @@
           if (first) first.focus();
         });
 
-        link.addEventListener('click', function (e) {
-          if (desktop() && window.matchMedia('(hover:none)').matches && !item.classList.contains('is-open')) {
-            e.preventDefault();
-            open(item);
-          }
-        });
-
         toggle.addEventListener('click', function () {
           if (item.classList.contains('is-open')) {
             cancel();
@@ -286,7 +279,7 @@
       links.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
       header.addEventListener('focusout',function(e){if(!header.contains(e.relatedTarget))setOpen(false);});
       document.addEventListener('pointerdown',function(e){if(!header.contains(e.target))setOpen(false);});
-      window.matchMedia('(min-width:1101px)').addEventListener('change',function(){setOpen(false);});
+      window.matchMedia(DESKTOP).addEventListener('change',function(){setOpen(false);});
     });
     // Content stays visible by default. Native details preserve keyboard behaviour.
     document.querySelectorAll('.faq__q').forEach(function(button){
