@@ -9,7 +9,7 @@
 - [Canada's AI Strategy & Funding](https://www.alexic.ca/canada-ai-strategy.html): Plain-language guide to Canada's AI for All strategy and SME funding (LIFT, Compute Access Fund).
 - [For SMEs & Employers](https://www.alexic.ca/for-smes.html): A practical, low-risk path to AI for small and medium businesses.
 - [Divisions](https://www.alexic.ca/divisions.html): AIC’s operating model and links to its core areas.
-- [Corporate AI Training](https://www.alexic.ca/ai-workforce-sme-adoption.html): Role-based learning. Current prices are maintained in the [Corporate AI Adoption pricing section](https://www.alexic.ca/corporate-ai-adoption.html#training).
+- [Corporate AI Training](https://www.alexic.ca/ai-workforce-sme-adoption.html): Role-based learning. See the [training formats](https://www.alexic.ca/corporate-ai-adoption.html#training).
 - [ALEBEX AI](https://www.alexic.ca/alebex-ai.html): AIC's flagship Canadian voice AI and agentic workflow platform, in production.
 - [Innovation Nights](https://www.alexic.ca/innovation-night.html): Applied-AI community events, hackathons, and event recaps in downtown Vancouver.
 - [Team](https://www.alexic.ca/about-aic.html): AIC's leadership and engineering team.

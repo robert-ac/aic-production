@@ -56,7 +56,7 @@ body.adoption-page[data-design]{--design-space:clamp(64px,7vw,96px)}
 .adoption-page[data-design=services] #training{background:#f2f5f9}
 .adoption-page[data-design=services] #training .arch-head{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
 .adoption-page[data-design=services] #training .arch-head p{margin:0}
-.adoption-page[data-design=services] .adoption-pricing{border-top:1px solid #b6c9da;margin-top:36px}
+.adoption-page[data-design=services] .adoption-learning-options{border-top:1px solid #b6c9da;margin-top:36px}
 .design-hero--delivery {
   background: #08182d;
   color: #eaf2fb;

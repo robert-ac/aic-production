@@ -33,11 +33,20 @@
   border-width: 0 1.5px 1.5px 0;
   transform: rotate(45deg);
 }
-.design-business-art--event img {
-  height: auto;
-  aspect-ratio: auto;
+.design-business-art--event {
+  display: grid;
+  align-self: center;
+  gap: 3px;
+  overflow: hidden;
+  background: #e6eef8;
   border-radius: 16px;
   outline: 1px solid #bfdcf02b;
+}
+.design-business-art--event img {
+  height: auto;
+  aspect-ratio: 100 / 62;
+  object-position: center top;
+  border-radius: 0;
 }
 @media (max-width: 760px) {
   .design-hero--business {
